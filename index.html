@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents for Global Business.">
-    <title>Agentic Solutions | High-Proficiency Triple Threat</title>
+    <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents.">
+    <title>Agentic Solutions | High-Proficiency Digital Engineering</title>
     
-    <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient 3D Background Overlay */
         #hero-canvas {
             position: fixed;
             top: 0;
@@ -63,13 +61,7 @@
             height: 400px;
             object-fit: cover;
             border-radius: 24px;
-            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-            filter: brightness(0.8) contrast(1.1);
-        }
-
-        .showcase-card:hover .showcase-img {
-            transform: scale(1.05);
-            filter: brightness(1);
+            filter: brightness(0.8);
         }
 
         .agent-card {
@@ -86,14 +78,9 @@
             transform: translateY(-10px);
         }
 
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .mission-stat {
+            border-left: 2px solid #6366f1;
+            padding-left: 1.5rem;
         }
     </style>
 </head>
@@ -101,7 +88,7 @@
 
     <canvas id="hero-canvas"></canvas>
 
-    <!-- Global Navigation -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-[100] nav-blur">
         <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -111,6 +98,7 @@
                 <span class="text-xl font-extrabold tracking-tighter uppercase">Agentic <span class="text-indigo-500">Solutions</span></span>
             </div>
             <div class="hidden lg:flex space-x-12 items-center text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="#about" class="hover:text-indigo-400 transition">About</a>
                 <a href="#websites" class="hover:text-indigo-400 transition">Websites</a>
                 <a href="#apps" class="hover:text-indigo-400 transition">Applications</a>
                 <a href="#agents" class="hover:text-indigo-400 transition">AI Agents</a>
@@ -130,176 +118,157 @@
                 Architecture <br><span class="gradient-text italic">Redefined.</span>
             </h1>
             <p class="text-slate-400 max-w-2xl mx-auto text-xl md:text-2xl font-medium mb-16">
-                Elite digital engineering across three domains. Websites. Mobile. Intelligence.
+                Elite digital engineering across three core pillars. <br>Websites. Mobile Apps. AI Agents.
             </p>
         </div>
     </section>
 
-    <!-- Pillar One: Websites -->
+    <!-- Mission & Goals Section (The "About") -->
+    <section id="about" class="py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="glass p-12 lg:p-24 border border-white/5">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <div data-aos="fade-up">
+                        <div class="text-indigo-500 font-black text-xs tracking-[0.5em] uppercase mb-4">OUR AIM</div>
+                        <h2 class="text-5xl font-black italic mb-8 uppercase tracking-tighter">Strategic <br>Intelligence.</h2>
+                        <p class="text-slate-400 text-xl leading-relaxed font-medium">
+                            At Agentic Solutions, our mission is to eliminate the friction between human ambition and digital execution. We aim to provide businesses with the high-proficiency infrastructure required to dominate their industry vertical.
+                        </p>
+                    </div>
+                    <div class="space-y-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mission-stat">
+                            <h4 class="text-white font-black uppercase text-sm tracking-widest mb-2">The Goal</h4>
+                            <p class="text-slate-400 font-medium">To deploy 1,000+ autonomous AI agents by 2027, saving our clients over 500,000 operational man-hours.</p>
+                        </div>
+                        <div class="mission-stat">
+                            <h4 class="text-white font-black uppercase text-sm tracking-widest mb-2">The Vision</h4>
+                            <p class="text-slate-400 font-medium">To become the global standard for "Neural Infrastructure"—where websites and apps aren't just tools, but sentient contributors to business growth.</p>
+                        </div>
+                        <div class="mission-stat">
+                            <h4 class="text-white font-black uppercase text-sm tracking-widest mb-2">The Standard</h4>
+                            <p class="text-slate-400 font-medium">Zero-compromise engineering. If it isn't elite, it doesn't ship. We only build for high-proficiency outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar: Websites -->
     <section id="websites" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div data-aos="fade-right">
                     <div class="text-indigo-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR ONE</div>
-                    <h2 class="text-6xl font-black italic mb-8">High-End <br>Websites</h2>
+                    <h2 class="text-6xl font-black italic mb-8">Elite <br>Websites</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        We don't just build sites; we engineer conversion-heavy ecosystems. Our web solutions project authority and handle enterprise-scale traffic.
+                        We build high-performance websites engineered for enterprise-scale authority and conversion-heavy ecosystems.
                     </p>
                 </div>
-                <div class="showcase-card relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Web Showcase" class="showcase-img relative glass p-2">
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" class="showcase-img glass p-2">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pillar Two: Applications -->
-    <section id="apps" class="py-32 px-8 bg-black/40">
+    <!-- Pillar: Applications -->
+    <section id="apps" class="py-32 px-8 bg-black/20">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="order-2 lg:order-1 showcase-card relative" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200" alt="App Showcase" class="showcase-img relative glass p-2">
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200" class="showcase-img glass p-2">
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
                     <div class="text-purple-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR TWO</div>
                     <h2 class="text-6xl font-black italic mb-8">Mobile <br>Applications</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        Native-grade performance for iOS and Android. High-proficiency mobile applications that integrate biometric security.
+                        We build native-grade mobile applications for iOS and Android with high-proficiency logic and biometric security.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pillar Three: Specialized AI Agents -->
+    <!-- Pillar: AI Agents -->
     <section id="agents" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24" data-aos="fade-up">
                 <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
                 <h2 class="text-6xl font-black italic mb-8">Neural AI Agents</h2>
                 <p class="text-slate-400 text-xl max-w-3xl mx-auto font-medium">
-                    Automated digital workers tailored for specific industry vertical logic.
+                    We build specialized autonomous digital workers tailored for specific industry vertical logic.
                 </p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Real Estate -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-house-chimney text-emerald-500"></i>
+                <div class="agent-card" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-house-chimney text-indigo-400"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Real Estate Agent</h3>
-                    <p class="text-slate-400 font-medium">Autonomous lead qualification and property matching logic available 24/7.</p>
+                    <p class="text-slate-400 font-medium">Autonomous lead qualification and property matching.</p>
                 </div>
-                <!-- Reception -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-user-tie text-blue-500"></i>
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-user-tie text-indigo-400"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Receptionist Agent</h3>
-                    <p class="text-slate-400 font-medium">Handles high-level inquiries and calendar synchronization for complex organizations.</p>
+                    <p class="text-slate-400 font-medium">Frontline communication and enterprise calendar sync.</p>
                 </div>
-                <!-- Medical -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-stethoscope text-purple-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Medical Assistant</h3>
-                    <p class="text-slate-400 font-medium">HIPAA-compliant intake logic and automated appointment triage.</p>
-                </div>
-                <!-- Logistics -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-cart-shopping text-amber-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">E-comm Logistics</h3>
-                    <p class="text-slate-400 font-medium">Inventory intelligence and real-time order tracking automation.</p>
-                </div>
-                <!-- Sales -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-comments-dollar text-rose-500"></i>
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-comments-dollar text-indigo-400"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Sales Closer</h3>
-                    <p class="text-slate-400 font-medium">Persuasion-optimized agents for cold traffic conversion and lead generation.</p>
-                </div>
-                <!-- Law -->
-                <div class="agent-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-scale-balanced text-indigo-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Legal Intake</h3>
-                    <p class="text-slate-400 font-medium">Automated case evaluation and secure document collection.</p>
+                    <p class="text-slate-400 font-medium">Persuasion-optimized agents trained for conversion.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form (Linked to Formspree) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-40 px-8">
-        <div class="max-w-4xl mx-auto glass p-12 lg:p-20 border border-white/10">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-black italic mb-4 uppercase tracking-tighter">Initiate <span class="text-indigo-500">Contact.</span></h2>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                    <div class="inline-flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.location.href='mailto:nexadigipg@gmail.com'">
-                        <i class="fa-solid fa-envelope text-indigo-400 group-hover:scale-110 transition"></i>
-                        <span class="text-xs font-black tracking-widest uppercase">nexadigipg@gmail.com</span>
-                    </div>
-                    <div class="inline-flex items-center gap-3 px-6 py-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-2xl hover:bg-[#0077b5]/20 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.open('https://linkedin.com/in/jake-magarrette', '_blank')">
-                        <i class="fa-brands fa-linkedin text-[#0077b5] group-hover:scale-110 transition text-lg"></i>
-                        <span class="text-xs font-black tracking-widest uppercase">LinkedIn Verified</span>
-                    </div>
-                </div>
-            </div>
+        <div class="max-w-xl mx-auto glass p-12 lg:p-20 border border-white/10 text-center">
+            <h2 class="text-5xl font-black italic mb-6 uppercase tracking-tighter">Secure <span class="text-indigo-500">Deployment.</span></h2>
+            <p class="text-slate-400 font-medium mb-12">Choose your preferred channel to initiate the build process.</p>
             
-            <form action="https://formspree.io/f/{form_id}" method="post">
-  <label for="email">Your Email</label>
-  <input name="Email" id="email" type="email">
-  <button type="submit">Submit</button>
-</form>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
-                    <input type="email" name="_replyto" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
-                </div>
-                <textarea name="message" rows="4" placeholder="DESCRIBE YOUR AGENT OR WEB REQUIREMENTS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
-                <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
-            </form>
+            <div class="space-y-4">
+                <!-- LinkedIn Action -->
+                <a href="https://linkedin.com/in/jake-magarrette" target="_blank" 
+                   class="flex items-center justify-center gap-4 w-full py-6 bg-[#0077b5] text-white font-black rounded-2xl hover:bg-white hover:text-[#0077b5] transition-all uppercase tracking-[0.4em] text-xs shadow-xl">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                    Connect on LinkedIn
+                </a>
+
+                <!-- Email Action -->
+                <a href="mailto:nexadigipg@gmail.com" 
+                   class="flex items-center justify-center gap-4 w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-indigo-600 transition-all uppercase tracking-[0.4em] text-xs shadow-xl">
+                    <i class="fa-solid fa-envelope text-xl"></i>
+                    nexadigipg@gmail.com
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-20 text-center opacity-30">
-        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • nexadigipg@gmail.com</p>
+        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS</p>
     </footer>
 
-    <!-- Three.js Visual Engine -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
         AOS.init({ duration: 1000, once: true });
-
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-
-        const group = new THREE.Group();
         const geometry = new THREE.TorusKnotGeometry(2.5, 0.5, 120, 24);
         const material = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.1 });
         const mesh = new THREE.Mesh(geometry, material);
-        group.add(mesh);
-        scene.add(group);
+        scene.add(mesh);
         camera.position.z = 8;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            mesh.rotation.y += 0.001;
-            mesh.rotation.x += 0.0005;
-            renderer.render(scene, camera);
-        }
+        function animate() { requestAnimationFrame(animate); mesh.rotation.y += 0.001; mesh.rotation.x += 0.0005; renderer.render(scene, camera); }
         animate();
-
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
