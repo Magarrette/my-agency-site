@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents for Global Business.">
-    <title>Agentic Solutions | Elite Digital Engineering</title>
+    <title>Agentic Solutions | High-Proficiency Triple Threat</title>
     
+    <!-- External Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,6 +27,7 @@
             overflow-x: hidden;
         }
 
+        /* 3D Canvas Background */
         #hero-canvas {
             position: fixed;
             top: 0;
@@ -56,7 +58,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Enhanced Image Containers */
         .showcase-img {
             width: 100%;
             height: 400px;
@@ -81,6 +82,7 @@
             100% { transform: translateY(0px); }
         }
 
+        /* AI Chat Window */
         #chat-window { 
             position: fixed; bottom: 24px; right: 24px; width: 420px; height: 680px; 
             display: none; flex-direction: column; z-index: 9999;
@@ -91,7 +93,7 @@
 
         @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-        .msg { padding: 16px 20px; border-radius: 20px; font-size: 0.9rem; line-height: 1.6; }
+        .msg { padding: 16px 20px; border-radius: 20px; font-size: 0.9rem; line-height: 1.6; max-width: 85%; }
         .msg-user { background: var(--primary); align-self: flex-end; border-bottom-right-radius: 4px; }
         .msg-ai { background: rgba(255,255,255,0.05); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--border); }
     </style>
@@ -100,7 +102,7 @@
 
     <canvas id="hero-canvas"></canvas>
 
-    <!-- Navigation -->
+    <!-- Global Navigation -->
     <nav class="fixed w-full z-[100] nav-blur">
         <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -118,7 +120,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center px-8 text-center pt-20">
         <div class="relative z-10" data-aos="zoom-out">
             <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black tracking-widest uppercase mb-10">
@@ -129,7 +131,7 @@
                 Architecture <br><span class="gradient-text italic">Redefined.</span>
             </h1>
             <p class="text-slate-400 max-w-2xl mx-auto text-xl md:text-2xl font-medium mb-16">
-                Three pillars of elite digital engineering. Websites. Mobile. Intelligence.
+                Elite digital engineering across three domains. Websites. Mobile. Intelligence.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <button onclick="document.getElementById('websites').scrollIntoView()" class="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-indigo-600 hover:text-white transition-all transform hover:-translate-y-1">VIEW ECOSYSTEM</button>
@@ -146,16 +148,14 @@
                     <div class="text-indigo-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR ONE</div>
                     <h2 class="text-6xl font-black italic mb-8">High-End <br>Websites</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        We don't just build sites; we engineer conversion-heavy ecosystems. Our web solutions are designed to project authority and handle enterprise-scale traffic with sub-second latency.
+                        We don't just build sites; we engineer conversion-heavy ecosystems. Our web solutions project authority and handle enterprise-scale traffic.
                     </p>
                     <ul class="space-y-4 mb-12">
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Next-Generation SEO Frameworks</li>
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Interactive 3D Environments</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Next-Gen Performance Optimization</li>
                         <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Hardened Data Protection</li>
                     </ul>
                 </div>
                 <div class="showcase-card relative" data-aos="fade-left">
-                    <div class="absolute -inset-4 bg-indigo-500/20 blur-3xl rounded-full"></div>
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Web Showcase" class="showcase-img relative glass p-2">
                 </div>
             </div>
@@ -167,19 +167,17 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="order-2 lg:order-1 showcase-card relative" data-aos="fade-right">
-                    <div class="absolute -inset-4 bg-purple-500/20 blur-3xl rounded-full"></div>
                     <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200" alt="App Showcase" class="showcase-img relative glass p-2">
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
                     <div class="text-purple-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR TWO</div>
                     <h2 class="text-6xl font-black italic mb-8">Mobile <br>Applications</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        Native-grade performance for iOS and Android. We build high-proficiency mobile applications that integrate biometric security, real-time sync, and fluid UX patterns.
+                        Native-grade performance for iOS and Android. High-proficiency mobile applications that integrate biometric security and fluid UX patterns.
                     </p>
                     <ul class="space-y-4 mb-12">
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Cross-Platform Fluidity (Flutter/RN)</li>
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Biometric Auth & Secure Vaulting</li>
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Enterprise API Integrations</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Cross-Platform Fluidity</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Secure API Vaulting</li>
                     </ul>
                 </div>
             </div>
@@ -194,71 +192,54 @@
                     <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
                     <h2 class="text-6xl font-black italic mb-8">Neural <br>AI Agents</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        Autonomous digital workers. Our agents handle high-level business logic, from automated lead qualification to complex data analysis, operating 24/7 without oversight.
+                        Autonomous digital workers handling high-level business logic, operating 24/7 without oversight.
                     </p>
-                    <div class="flex gap-4">
-                         <button onclick="openDemo('reception')" class="px-8 py-4 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 font-black rounded-xl hover:bg-emerald-600 hover:text-white transition-all">TRY AGENT DEMO</button>
-                    </div>
+                    <button onclick="openDemo('reception')" class="px-8 py-4 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 font-black rounded-xl hover:bg-emerald-600 hover:text-white transition-all">ACTIVATE AGENT DEMO</button>
                 </div>
                 <div class="showcase-card relative" data-aos="fade-left">
-                    <div class="absolute -inset-4 bg-emerald-500/20 blur-3xl rounded-full"></div>
                     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Robot" class="showcase-img relative glass p-2 floating-robot">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lab Demo -->
-    <section class="py-20 px-8 bg-indigo-900/10">
-        <div class="max-w-5xl mx-auto text-center">
-            <h3 class="text-2xl font-black italic mb-4">Ready to Automate?</h3>
-            <p class="text-slate-500 mb-8">Click below to experience the intelligence firsthand.</p>
-            <div class="flex justify-center gap-6 flex-wrap">
-                <div onclick="openDemo('reception')" class="px-10 py-10 glass border-indigo-500/30 hover:border-indigo-500 transition-all cursor-pointer group">
-                    <i class="fa-solid fa-robot text-4xl mb-6 text-indigo-500 group-hover:scale-110 transition"></i>
-                    <h5 class="font-black uppercase tracking-widest text-xs">Corp. Assistant</h5>
-                </div>
-                <div onclick="openDemo('realestate')" class="px-10 py-10 glass border-amber-500/30 hover:border-amber-500 transition-all cursor-pointer group">
-                    <i class="fa-solid fa-key text-4xl mb-6 text-amber-500 group-hover:scale-110 transition"></i>
-                    <h5 class="font-black uppercase tracking-widest text-xs">Asset Closer</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="py-40 px-8">
-        <div class="max-w-4xl mx-auto glass p-12 lg:p-20 relative overflow-hidden">
-             <div class="absolute top-0 right-0 p-10 opacity-5">
-                 <i class="fa-solid fa-shield-halved text-[20rem]"></i>
-             </div>
-            <div class="relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-5xl font-black italic mb-4 uppercase tracking-tighter">Initiate <span class="text-indigo-500">Contact.</span></h2>
-                    <p class="text-slate-500 font-bold">End-to-end encryption for all project transmissions.</p>
-                </div>
-                <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
-                        <input type="email" name="email" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+        <div class="max-w-4xl mx-auto glass p-12 lg:p-20 border border-white/10">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black italic mb-4 uppercase tracking-tighter">Initiate <span class="text-indigo-500">Contact.</span></h2>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                    <!-- Secure Email Link -->
+                    <div class="inline-flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.location.href='mailto:nexadigipg@gmail.com'">
+                        <i class="fa-solid fa-envelope text-indigo-400 group-hover:scale-110 transition"></i>
+                        <span class="text-xs font-black tracking-widest uppercase">nexadigipg@gmail.com</span>
                     </div>
-                    <select name="service" class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-slate-500 font-bold">
-                        <option value="website">01. High-Performance Website</option>
-                        <option value="app">02. Mobile Native Application</option>
-                        <option value="ai">03. Custom Neural Agent</option>
-                    </select>
-                    <textarea name="message" rows="4" placeholder="PROJECT PARAMETERS AND KPI GOALS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
-                    <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
-                </form>
+                    <!-- LinkedIn Link -->
+                    <div class="inline-flex items-center gap-3 px-6 py-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-2xl hover:bg-[#0077b5]/20 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.open('https://linkedin.com/in/jake-magarrette', '_blank')">
+                        <i class="fa-brands fa-linkedin text-[#0077b5] group-hover:scale-110 transition text-lg"></i>
+                        <span class="text-xs font-black tracking-widest uppercase">LinkedIn Verified</span>
+                    </div>
+                </div>
             </div>
+            
+            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+                    <input type="email" name="email" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+                </div>
+                <textarea name="message" rows="4" placeholder="PROJECT PARAMETERS AND KPI GOALS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
+                <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
+            </form>
         </div>
     </section>
 
+    <!-- Site Footer -->
     <footer class="py-20 text-center opacity-40">
-        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • JAKE MAGARRETTE • HIGH-PROFICIENCY BUILDS</p>
+        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • JAKE MAGARRETTE • nexadigipg@gmail.com</p>
     </footer>
 
-    <!-- AI Interface -->
+    <!-- AI Interactivity Interface -->
     <div id="chat-window">
         <div id="chat-header" class="p-8 text-white flex justify-between items-center bg-indigo-600 rounded-t-[32px]">
             <div class="flex items-center gap-4">
@@ -284,33 +265,11 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // 3D Background
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        // --- PASTE YOUR GEMINI API KEY BELOW ---
+        const apiKey = "AIzaSyA07gNPKxdAmC9Re6tlzEOEil2nLJd7Gk8"; 
 
-        const group = new THREE.Group();
-        const geometry = new THREE.TorusKnotGeometry(2.5, 0.5, 120, 24);
-        const material = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.1 });
-        group.add(new THREE.Mesh(geometry, material));
-        
-        scene.add(group);
-        camera.position.z = 8;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            group.rotation.y += 0.0008;
-            group.rotation.z += 0.0003;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // AI System
-        const apiKey = ""; 
         const personas = {
-            reception: { name: "Corp Assistant", color: "#6366f1", icon: "fa-robot", prompt: "You are an elite corporate receptionist. We build Websites, Apps, and AI Agents.", intro: "System active. Identify your project requirements." },
-            realestate: { name: "Asset Closer", color: "#f59e0b", icon: "fa-key", prompt: "You are a high-level sales closer. Push the value of elite development.", intro: "Looking to scale? I'm ready to discuss deployment." }
+            reception: { name: "Corp Assistant", color: "#6366f1", icon: "fa-robot", prompt: "You are an elite corporate receptionist for Agentic Solutions.", intro: "System active. How can I assist with your deployment?" }
         };
 
         let currentPersona = 'reception';
@@ -334,39 +293,68 @@
         async function sendMessage() {
             const text = chatInput.value.trim();
             if(!text) return;
+            
+            if(!apiKey || apiKey === "") {
+                addMsg(text, 'user');
+                addMsg("SYSTEM NOTICE: This demo requires a Google API Key. Please insert your key into the 'apiKey' variable at the bottom of the source code.", 'ai');
+                chatInput.value = '';
+                return;
+            }
+
             addMsg(text, 'user');
             chatInput.value = '';
-            const loading = addMsg("Analysing stream...", 'ai');
+            const loading = addMsg("Syncing with Neural Core...", 'ai');
+
             try {
                 const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " Keep it elite, technical, and under 40 words." }] }
+                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " Keep response short, professional, and technical." }] }
                     })
                 });
                 const data = await res.json();
                 loading.remove();
-                addMsg(data.candidates[0].content.parts[0].text, 'ai');
-            } catch (e) { loading.innerText = "Neural link dropped. Re-attempting..."; }
+                if(data.candidates && data.candidates[0].content) {
+                    addMsg(data.candidates[0].content.parts[0].text, 'ai');
+                } else {
+                    addMsg("Sync failed. Verify API key permissions in Google AI Studio.", 'ai');
+                }
+            } catch (e) { 
+                loading.remove();
+                addMsg("Transmission failed. Network or API error.", 'ai'); 
+            }
         }
 
         function addMsg(text, sender) {
             const d = document.createElement('div');
-            d.className = `msg shadow-2xl ${sender === 'user' ? 'msg-user font-black' : 'msg-ai font-medium'}`;
+            d.className = `msg shadow-2xl ${sender === 'user' ? 'msg-user font-black ml-auto' : 'msg-ai font-medium mr-auto'}`;
             d.innerText = text;
             chatMessages.appendChild(d);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return d;
         }
 
+        // Background Scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        const geometry = new THREE.TorusKnotGeometry(2.5, 0.5, 120, 24);
+        const material = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.1 });
+        const knot = new THREE.Mesh(geometry, material);
+        scene.add(knot);
+        camera.position.z = 8;
+        function animate() { requestAnimationFrame(animate); knot.rotation.y += 0.005; renderer.render(scene, camera); }
+        animate();
+
+        chatInput.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
-        chatInput.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
     </script>
 </body>
 </html>
