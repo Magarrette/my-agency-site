@@ -1,228 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Solutions | Professional Web & AI Agency</title>
+    <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents for Global Business.">
+    <title>Agentic Solutions | Elite Digital Engineering</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background: #ffffff; color: #0f172a; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         
-        .ai-gradient {
+        :root {
+            --primary: #6366f1;
+            --dark: #020617;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #000; 
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+        }
+
+        .nav-blur {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .gradient-text {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .glass-card {
-            background: white;
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
-        }
-
-        .demo-card {
-            cursor: pointer;
+        /* Enhanced Image Containers */
+        .showcase-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
             border-radius: 24px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: brightness(0.8) contrast(1.1);
         }
 
-        .demo-card:hover {
-            transform: translateY(-5px);
-            border-color: #6366f1;
-            background: #ffffff;
-            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+        .showcase-card:hover .showcase-img {
+            transform: scale(1.05);
+            filter: brightness(1);
         }
 
-        /* Chat Widget Styles */
+        .floating-robot {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
         #chat-window { 
-            position: fixed; bottom: 20px; right: 20px; width: 360px; height: 580px; 
-            display: none; flex-direction: column; z-index: 1000;
-            background: white; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            border: 1px solid #e2e8f0; overflow: hidden;
+            position: fixed; bottom: 24px; right: 24px; width: 420px; height: 680px; 
+            display: none; flex-direction: column; z-index: 9999;
+            background: #0f172a; border-radius: 32px; border: 1px solid var(--border);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            animation: slideUp 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
-        .msg-user { background: #6366f1; color: white; align-self: flex-end; border-radius: 18px 18px 4px 18px; }
-        .msg-ai { background: #f1f5f9; color: #1e293b; align-self: flex-start; border-radius: 18px 18px 18px 4px; }
-        
-        .pulse-icon { animation: pulse-red 2s infinite; }
-        @keyframes pulse-red { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .msg { padding: 16px 20px; border-radius: 20px; font-size: 0.9rem; line-height: 1.6; }
+        .msg-user { background: var(--primary); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .msg-ai { background: rgba(255,255,255,0.05); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--border); }
     </style>
 </head>
-<body>
+<body class="bg-slate-950">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <i class="fa-solid fa-robot text-white text-xl"></i>
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[100] nav-blur">
+        <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-bolt-lightning text-white text-lg"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight">AGENTIC SOLUTIONS</span>
+                <span class="text-xl font-extrabold tracking-tighter uppercase">Agentic <span class="text-indigo-500">Solutions</span></span>
             </div>
-            <div class="hidden md:flex space-x-8 items-center text-sm font-semibold">
-                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
-                <a href="#demo-lab" class="hover:text-indigo-600 transition">AI Lab</a>
-                <a href="#contact" class="px-6 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">Inquire</a>
+            <div class="hidden lg:flex space-x-12 items-center text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="#websites" class="hover:text-indigo-400 transition">Websites</a>
+                <a href="#apps" class="hover:text-indigo-400 transition">Applications</a>
+                <a href="#agents" class="hover:text-indigo-400 transition">AI Agents</a>
+                <a href="#contact" class="px-8 py-3 bg-white text-black rounded-full hover:bg-indigo-600 hover:text-white transition-all font-black">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-44 pb-20 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
-            Design. Code. <br><span class="ai-gradient">Deploy Intelligence.</span>
-        </h1>
-        <p class="text-slate-500 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
-            High-performance websites and custom AI agents for forward-thinking businesses. 
-            Automate your growth with our specialized technology suite.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
-            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" class="flex items-center space-x-4 px-10 py-5 bg-white border border-slate-200 rounded-2xl w-full sm:w-auto hover:border-indigo-600 transition group">
-                <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </div>
-                <div class="text-left">
-                    <p class="text-[10px] uppercase font-bold text-slate-400">Official Profile</p>
-                    <p class="font-bold text-slate-800">Jake Magarrette</p>
-                </div>
-            </a>
-            <a href="#demo-lab" class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:bg-black transition">Explore AI Demos</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 bg-slate-50 px-6 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="glass-card p-10 rounded-[2.5rem]">
-                <i class="fa-solid fa-code text-indigo-600 text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Web Development</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Full-stack web applications designed for speed, scale, and high conversion rates.</p>
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center px-8 text-center pt-20">
+        <div class="relative z-10" data-aos="zoom-out">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black tracking-widest uppercase mb-10">
+                <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                <span>System Status: High-Proficiency Online</span>
             </div>
-            <div class="glass-card p-10 rounded-[2.5rem]">
-                <i class="fa-solid fa-microchip text-purple-600 text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">AI Agents</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Custom LLM-powered agents for therapy, sales, and automated customer support.</p>
-            </div>
-            <div class="glass-card p-10 rounded-[2.5rem]">
-                <i class="fa-solid fa-chart-line text-pink-600 text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Automation</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">End-to-end business process automation to eliminate repetitive manual tasks.</p>
+            <h1 class="text-6xl md:text-[8rem] font-black leading-[0.85] tracking-tighter mb-10 uppercase">
+                Architecture <br><span class="gradient-text italic">Redefined.</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-xl md:text-2xl font-medium mb-16">
+                Three pillars of elite digital engineering. Websites. Mobile. Intelligence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button onclick="document.getElementById('websites').scrollIntoView()" class="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-indigo-600 hover:text-white transition-all transform hover:-translate-y-1">VIEW ECOSYSTEM</button>
+                <button onclick="document.getElementById('contact').scrollIntoView()" class="px-10 py-5 bg-slate-900 border border-white/10 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:-translate-y-1">INQUIRE</button>
             </div>
         </div>
     </section>
 
-    <section id="demo-lab" class="py-24 px-6 bg-white">
+    <!-- Pillar 01: Websites -->
+    <section id="websites" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div class="text-left">
-                    <h2 class="text-4xl font-extrabold mb-4 italic leading-none">The Showroom <span class="text-indigo-600">Lab</span></h2>
-                    <p class="text-slate-500">Select an agent below to interact with our custom AI implementations.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <div class="text-indigo-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR ONE</div>
+                    <h2 class="text-6xl font-black italic mb-8">High-End <br>Websites</h2>
+                    <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
+                        We don't just build sites; we engineer conversion-heavy ecosystems. Our web solutions are designed to project authority and handle enterprise-scale traffic with sub-second latency.
+                    </p>
+                    <ul class="space-y-4 mb-12">
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Next-Generation SEO Frameworks</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Interactive 3D Environments</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Hardened Data Protection</li>
+                    </ul>
                 </div>
-                <div class="bg-indigo-50 px-6 py-3 rounded-2xl border border-indigo-100 flex items-center gap-4">
-                    <div class="w-3 h-3 bg-emerald-500 rounded-full pulse-icon"></div>
-                    <span class="text-xs font-bold text-indigo-900 tracking-widest uppercase">System: Operational</span>
+                <div class="showcase-card relative" data-aos="fade-left">
+                    <div class="absolute -inset-4 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Web Showcase" class="showcase-img relative glass p-2">
                 </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div onclick="openDemo('therapy')" class="demo-card p-8">
-                    <i class="fa-solid fa-heart-pulse text-emerald-500 text-2xl mb-6"></i>
-                    <h4 class="font-bold text-lg mb-2">Wellness Agent</h4>
-                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Health & Support</p>
-                    <p class="text-xs text-slate-500">Empathetic support AI for wellness centers.</p>
-                </div>
-
-                <div onclick="openDemo('reception')" class="demo-card p-8">
-                    <i class="fa-solid fa-bell-concierge text-blue-500 text-2xl mb-6"></i>
-                    <h4 class="font-bold text-lg mb-2">AI Receptionist</h4>
-                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Corporate FAQ</p>
-                    <p class="text-xs text-slate-500">Booking and inquiry agent for offices.</p>
-                </div>
-
-                <div onclick="openDemo('realestate')" class="demo-card p-8">
-                    <i class="fa-solid fa-house-chimney text-amber-500 text-2xl mb-6"></i>
-                    <h4 class="font-bold text-lg mb-2">Property Agent</h4>
-                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Sales Lead Gen</p>
-                    <p class="text-xs text-slate-500">Qualification agent for real estate firms.</p>
-                </div>
-
-                <div onclick="openDemo('voice')" class="demo-card p-8 bg-indigo-600 border-none text-white shadow-xl">
-                    <i class="fa-solid fa-microphone-lines text-2xl mb-6 pulse-icon"></i>
-                    <h4 class="font-bold text-lg mb-2">Voice Tech Demo</h4>
-                    <p class="text-xs text-indigo-200 uppercase font-bold tracking-widest leading-none mb-3">Speech Recognition</p>
-                    <p class="text-xs text-indigo-100">Live Speech-to-Text interaction tech.</p>
-                </div>AIzaSyA07gNPKxdAmC9Re6tlzEOEil2nLJd7Gk8
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 bg-slate-900">
-        <div class="max-w-3xl mx-auto bg-white/5 p-12 rounded-[3rem] border border-white/10 backdrop-blur-sm">
-            <h2 class="text-3xl font-bold text-center text-white mb-10 italic">Inquire About Our Services</h2>
-            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Full Name" class="p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required>
-                    <input type="email" name="email" placeholder="Business Email" class="p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required>
+    <!-- Pillar 02: Applications -->
+    <section id="apps" class="py-32 px-8 bg-black/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="order-2 lg:order-1 showcase-card relative" data-aos="fade-right">
+                    <div class="absolute -inset-4 bg-purple-500/20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200" alt="App Showcase" class="showcase-img relative glass p-2">
                 </div>
-                <textarea name="message" rows="4" placeholder="How can we help your business scale?" class="w-full p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required></textarea>
-                <button type="submit" class="w-full py-5 bg-indigo-600 text-white font-bold rounded-xl shadow-2xl hover:bg-indigo-700 transition uppercase tracking-widest">Submit Inquiry</button>
-            </form>
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <div class="text-purple-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR TWO</div>
+                    <h2 class="text-6xl font-black italic mb-8">Mobile <br>Applications</h2>
+                    <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
+                        Native-grade performance for iOS and Android. We build high-proficiency mobile applications that integrate biometric security, real-time sync, and fluid UX patterns.
+                    </p>
+                    <ul class="space-y-4 mb-12">
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Cross-Platform Fluidity (Flutter/RN)</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Biometric Auth & Secure Vaulting</li>
+                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Enterprise API Integrations</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-500 text-[10px] uppercase tracking-[0.3em]">
-        &copy; 2024 AGENTIC SOLUTIONS • WEB DESIGN • AI AGENTS • AUTOMATION
+    <!-- Pillar 03: AI Agents -->
+    <section id="agents" class="py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
+                    <h2 class="text-6xl font-black italic mb-8">Neural <br>AI Agents</h2>
+                    <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
+                        Autonomous digital workers. Our agents handle high-level business logic, from automated lead qualification to complex data analysis, operating 24/7 without oversight.
+                    </p>
+                    <div class="flex gap-4">
+                         <button onclick="openDemo('reception')" class="px-8 py-4 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 font-black rounded-xl hover:bg-emerald-600 hover:text-white transition-all">TRY AGENT DEMO</button>
+                    </div>
+                </div>
+                <div class="showcase-card relative" data-aos="fade-left">
+                    <div class="absolute -inset-4 bg-emerald-500/20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Robot" class="showcase-img relative glass p-2 floating-robot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Demo -->
+    <section class="py-20 px-8 bg-indigo-900/10">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-2xl font-black italic mb-4">Ready to Automate?</h3>
+            <p class="text-slate-500 mb-8">Click below to experience the intelligence firsthand.</p>
+            <div class="flex justify-center gap-6 flex-wrap">
+                <div onclick="openDemo('reception')" class="px-10 py-10 glass border-indigo-500/30 hover:border-indigo-500 transition-all cursor-pointer group">
+                    <i class="fa-solid fa-robot text-4xl mb-6 text-indigo-500 group-hover:scale-110 transition"></i>
+                    <h5 class="font-black uppercase tracking-widest text-xs">Corp. Assistant</h5>
+                </div>
+                <div onclick="openDemo('realestate')" class="px-10 py-10 glass border-amber-500/30 hover:border-amber-500 transition-all cursor-pointer group">
+                    <i class="fa-solid fa-key text-4xl mb-6 text-amber-500 group-hover:scale-110 transition"></i>
+                    <h5 class="font-black uppercase tracking-widest text-xs">Asset Closer</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-40 px-8">
+        <div class="max-w-4xl mx-auto glass p-12 lg:p-20 relative overflow-hidden">
+             <div class="absolute top-0 right-0 p-10 opacity-5">
+                 <i class="fa-solid fa-shield-halved text-[20rem]"></i>
+             </div>
+            <div class="relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-black italic mb-4 uppercase tracking-tighter">Initiate <span class="text-indigo-500">Contact.</span></h2>
+                    <p class="text-slate-500 font-bold">End-to-end encryption for all project transmissions.</p>
+                </div>
+                <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+                        <input type="email" name="email" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+                    </div>
+                    <select name="service" class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-slate-500 font-bold">
+                        <option value="website">01. High-Performance Website</option>
+                        <option value="app">02. Mobile Native Application</option>
+                        <option value="ai">03. Custom Neural Agent</option>
+                    </select>
+                    <textarea name="message" rows="4" placeholder="PROJECT PARAMETERS AND KPI GOALS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
+                    <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center opacity-40">
+        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • JAKE MAGARRETTE • HIGH-PROFICIENCY BUILDS</p>
     </footer>
 
+    <!-- AI Interface -->
     <div id="chat-window">
-        <div id="chat-header" class="p-5 text-white flex justify-between items-center transition-all">
-            <div class="flex items-center gap-3">
-                <i id="h-icon" class="fa-solid"></i>
-                <div class="leading-none">
-                    <p id="h-name" class="font-bold text-sm">AI Agent</p>
-                    <p class="text-[9px] opacity-70 uppercase font-bold tracking-widest">Demo Environment</p>
+        <div id="chat-header" class="p-8 text-white flex justify-between items-center bg-indigo-600 rounded-t-[32px]">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><i id="h-icon" class="fa-solid"></i></div>
+                <div>
+                    <p id="h-name" class="font-black text-sm"></p>
+                    <p class="text-[8px] opacity-60 font-bold uppercase tracking-widest">Neural Sync Active</p>
                 </div>
             </div>
-            <button onclick="closeChat()"><i class="fa-solid fa-times"></i></button>
+            <button onclick="closeChat()" class="text-white/50 hover:text-white transition"><i class="fa-solid fa-times text-xl"></i></button>
         </div>
-        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto flex flex-col gap-4 text-sm bg-white"></div>
-        <div class="p-4 border-t border-slate-100 flex gap-2 bg-slate-50 items-center">
-            <button onclick="startVoice()" class="w-10 h-10 bg-slate-200 text-slate-600 rounded-xl flex items-center justify-center hover:bg-indigo-100 hover:text-indigo-600 transition">
-                <i class="fa-solid fa-microphone"></i>
-            </button>
-            <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 p-3 rounded-xl border border-slate-200 outline-none text-sm">
-            <button onclick="sendMessage()" class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+        <div id="chat-messages" class="flex-1 p-8 overflow-y-auto flex flex-col gap-6 bg-[#0f172a]"></div>
+        <div class="p-8 border-t border-white/5 flex gap-4 bg-[#0f172a] rounded-b-[32px]">
+            <input type="text" id="chat-input" placeholder="Type query..." class="flex-1 bg-transparent outline-none font-bold text-white placeholder:text-slate-700">
+            <button onclick="sendMessage()" class="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-xl"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 
-    <script>
-        // PASTE YOUR KEY HERE
-        const apiKey = ""; 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // 3D Background
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const group = new THREE.Group();
+        const geometry = new THREE.TorusKnotGeometry(2.5, 0.5, 120, 24);
+        const material = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.1 });
+        group.add(new THREE.Mesh(geometry, material));
+        
+        scene.add(group);
+        camera.position.z = 8;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.y += 0.0008;
+            group.rotation.z += 0.0003;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // AI System
+        const apiKey = ""; 
         const personas = {
-            therapy: { name: "Wellness Guide", color: "#10b981", icon: "fa-heart-pulse", prompt: "Professional therapy agent. Empathic. After 2-3 msgs, ask for email to send a guide.", intro: "Hello. I'm your Wellness Guide. How are you feeling today?" },
-            reception: { name: "AI Receptionist", color: "#3b82f6", icon: "fa-bell-concierge", prompt: "Corporate receptionist. Ask for email to book a call if interested.", intro: "Welcome. How can I assist you with your booking or inquiry today?" },
-            realestate: { name: "Property Agent", color: "#f59e0b", icon: "fa-house-chimney", prompt: "Real estate agent. Ask for email to send property listings.", intro: "Hi! Looking for a dream home or investment? Tell me your budget!" },
-            voice: { name: "Voice Demo", color: "#6366f1", icon: "fa-microphone-lines", prompt: "Keep responses short. Remind user to use the microphone button.", intro: "I'm the Voice AI. Tap the microphone icon below to talk to me!" }
+            reception: { name: "Corp Assistant", color: "#6366f1", icon: "fa-robot", prompt: "You are an elite corporate receptionist. We build Websites, Apps, and AI Agents.", intro: "System active. Identify your project requirements." },
+            realestate: { name: "Asset Closer", color: "#f59e0b", icon: "fa-key", prompt: "You are a high-level sales closer. Push the value of elite development.", intro: "Looking to scale? I'm ready to discuss deployment." }
         };
 
-        let currentPersona = 'therapy';
-        let msgCount = 0;
+        let currentPersona = 'reception';
         const chatWindow = document.getElementById('chat-window');
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
-        const header = document.getElementById('chat-header');
 
         function openDemo(key) {
             currentPersona = key;
             const p = personas[key];
-            header.style.backgroundColor = p.color;
+            document.getElementById('chat-header').style.backgroundColor = p.color;
             document.getElementById('h-name').innerText = p.name;
             document.getElementById('h-icon').className = `fa-solid ${p.icon}`;
             chatMessages.innerHTML = '';
             chatWindow.style.display = 'flex';
-            msgCount = 0;
             addMsg(p.intro, 'ai');
         }
 
@@ -230,61 +333,41 @@
 
         async function sendMessage() {
             const text = chatInput.value.trim();
-            if (!text) return;
+            if(!text) return;
             addMsg(text, 'user');
             chatInput.value = '';
-            msgCount++;
-            
-            if (!apiKey) {
-                addMsg("⚠️ API Key is missing. Please add your Gemini key to the source code to enable the AI brain.", 'ai');
-                return;
-            }
-
-            const loading = addMsg("Thinking...", 'ai');
+            const loading = addMsg("Analysing stream...", 'ai');
             try {
-                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " (Session msg count: " + msgCount + ")" }] }
+                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " Keep it elite, technical, and under 40 words." }] }
                     })
                 });
                 const data = await res.json();
                 loading.remove();
-                if (data.error) {
-                    addMsg(`❌ Error: ${data.error.message}`, 'ai');
-                } else {
-                    addMsg(data.candidates[0].content.parts[0].text, 'ai');
-                }
-            } catch (e) { 
-                loading.remove();
-                addMsg("❌ Connection failed. Check your internet or API key.", 'ai');
-            }
-        }
-
-        function startVoice() {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = 'en-US';
-            recognition.start();
-            chatInput.placeholder = "Listening...";
-            recognition.onresult = (event) => {
-                chatInput.value = event.results[0][0].transcript;
-                sendMessage();
-                chatInput.placeholder = "Type a message...";
-            };
+                addMsg(data.candidates[0].content.parts[0].text, 'ai');
+            } catch (e) { loading.innerText = "Neural link dropped. Re-attempting..."; }
         }
 
         function addMsg(text, sender) {
             const d = document.createElement('div');
-            d.className = `p-4 max-w-[85%] ${sender === 'user' ? 'msg-user' : 'msg-ai'}`;
+            d.className = `msg shadow-2xl ${sender === 'user' ? 'msg-user font-black' : 'msg-ai font-medium'}`;
             d.innerText = text;
             chatMessages.appendChild(d);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return d;
         }
 
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
         chatInput.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
     </script>
 </body>
 </html>
+
