@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Solutions | Web, Apps & AI Demo Lab</title>
+    <title>Agentic Solutions | Professional AI & Web Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
         
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background: #ffffff; }
         
         .ai-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -21,259 +20,227 @@
         .glass-card {
             background: white;
             border: 1px solid #f1f5f9;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            transform: translateY(-8px);
             border-color: #6366f1;
-            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.1);
         }
 
         .demo-card {
             cursor: pointer;
-            border: 2px solid transparent;
+            border-radius: 24px;
             transition: all 0.3s ease;
-        }
-
-        .demo-card:hover {
-            border-color: #6366f1;
             background: #f8fafc;
         }
 
-        /* Swiper Styling */
-        .swiper { width: 100%; padding: 50px 0; }
-        .swiper-slide {
-            width: 300px; height: 400px; border-radius: 24px; overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative;
-        }
-        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .slide-content {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white;
+        .demo-card:hover {
+            background: #f1f5f9;
+            transform: translateY(-5px);
         }
 
-        /* Chat Window Styles */
+        /* Chat Widget */
         #chat-window { 
-            position: fixed; bottom: 20px; right: 20px; width: 360px; height: 550px; 
+            position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; 
             display: none; flex-direction: column; z-index: 1000;
-            background: white; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             border: 1px solid #e2e8f0; overflow: hidden;
         }
-
-        .msg-user { background: #6366f1; color: white; align-self: flex-end; border-radius: 18px 18px 4px 18px; }
-        .msg-ai { background: #f1f5f9; color: #1e293b; align-self: flex-start; border-radius: 18px 18px 18px 4px; }
+        .msg-user { background: #6366f1; color: white; align-self: flex-end; border-radius: 15px 15px 0 15px; }
+        .msg-ai { background: #f1f5f9; color: #1e293b; align-self: flex-start; border-radius: 15px 15px 15px 0; }
+        
+        .pulse { animation: pulse-anim 2s infinite; }
+        @keyframes pulse-anim { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="text-slate-900">
 
     <!-- Nav -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
                     <i class="fa-solid fa-robot text-white text-xl"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight">AGENTIC</span>
+                <span class="text-xl font-bold tracking-tight">AGENTIC SOLUTIONS</span>
             </div>
-            <div class="hidden md:flex space-x-8 items-center text-sm font-semibold">
-                <a href="#services" class="hover:text-indigo-600">Services</a>
-                <a href="#demo-lab" class="hover:text-indigo-600 font-bold text-indigo-600">AI Lab</a>
-                <a href="#work-dashboard" class="hover:text-indigo-600">Dashboard</a>
-                <a href="#contact" class="px-6 py-2.5 bg-indigo-600 text-white rounded-full">Contact</a>
-            </div>
+            <a href="#contact" class="px-6 py-2 bg-indigo-600 text-white rounded-full text-sm font-bold hover:bg-indigo-700 transition">Contact Us</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="relative pt-44 pb-20 px-4 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
-            Design. Develop. <br><span class="ai-gradient">Deploy Intelligence.</span>
+    <!-- Hero Section (Original Concept) -->
+    <section class="pt-44 pb-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            The Future of <br><span class="ai-gradient">Digital Agency.</span>
         </h1>
-        <p class="text-lg text-slate-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-            We build high-performance websites and custom AI agents for ambitious businesses. 
-            Scroll down to explore our **AI Demo Lab** or view our **Work Dashboard**.
+        <p class="text-slate-500 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+            High-end web design, mobile development, and specialized AI automation. <br>
+            We build the systems that help businesses scale.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
-            <a href="#demo-lab" class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:bg-black transition">Try AI Demos</a>
-            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-white rounded-full border border-slate-200 flex items-center justify-center text-indigo-600">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
+            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" class="flex items-center space-x-3 px-10 py-5 bg-white border border-slate-200 rounded-2xl w-full sm:w-auto hover:shadow-lg transition">
+                <i class="fa-brands fa-linkedin text-indigo-600 text-2xl"></i>
+                <div class="text-left">
+                    <p class="text-[10px] uppercase text-slate-400 font-bold leading-none mb-1">Official Profile</p>
+                    <p class="font-bold text-slate-800 leading-none">Connect on LinkedIn</p>
                 </div>
-                <span class="font-bold text-slate-700">Jake Magarrette</span>
+            </a>
+            <a href="#demo-lab" class="px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:bg-black transition w-full sm:w-auto">
+                Explore AI Demos
             </a>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="py-24 bg-white px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            <div class="glass-card p-10 rounded-[2.5rem]">
-                <i class="fa-solid fa-code text-indigo-600 text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Web & App Dev</h3>
-                <p class="text-slate-600 text-sm">Full-stack solutions built with React, Tailwind, and high-performance backends.</p>
+    <!-- Services Section -->
+    <section class="py-20 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-3xl">
+                <i class="fa-solid fa-code text-indigo-600 text-2xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Web Development</h3>
+                <p class="text-slate-500 text-sm">Responsive, lightning-fast websites built with modern frameworks.</p>
             </div>
-            <div class="glass-card p-10 rounded-[2.5rem] bg-indigo-600 text-white border-none shadow-2xl">
-                <i class="fa-solid fa-microchip text-white text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">AI Agents</h3>
-                <p class="text-indigo-100 text-sm">Custom LLM development for therapy, sales, and automated customer support.</p>
+            <div class="glass-card p-8 rounded-3xl">
+                <i class="fa-solid fa-brain text-purple-600 text-2xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">AI Implementation</h3>
+                <p class="text-slate-500 text-sm">Custom LLM agents tailored to your business industry.</p>
             </div>
-            <div class="glass-card p-10 rounded-[2.5rem]">
-                <i class="fa-solid fa-chart-line text-pink-600 text-3xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Automation</h3>
-                <p class="text-slate-600 text-sm">Scale your business by automating repetitive tasks with smart workflows.</p>
+            <div class="glass-card p-8 rounded-3xl">
+                <i class="fa-solid fa-mobile-screen-button text-pink-600 text-2xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Mobile Solutions</h3>
+                <p class="text-slate-500 text-sm">Cross-platform apps that provide seamless user experiences.</p>
             </div>
         </div>
     </section>
 
-    <!-- AI DEMO LAB -->
-    <section id="demo-lab" class="py-24 px-4 bg-slate-50 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold mb-4 italic">The AI Demo <span class="text-indigo-600">Lab</span></h2>
-                <p class="text-slate-500">Interact with our industry-specific AI models. Tap a card to start chatting.</p>
+    <!-- AI DEMO LAB (Upgraded Feature) -->
+    <section id="demo-lab" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Interactive AI <span class="text-indigo-600">Lab</span></h2>
+                    <p class="text-slate-500">Select an agent to test our automation capabilities.</p>
+                </div>
+                <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-[10px] font-bold tracking-widest flex items-center gap-3">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full pulse"></span> SYSTEM: ONLINE | VISITORS: <span id="v-count">2,411</span>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Therapy -->
-                <div onclick="openDemo('therapy')" class="demo-card bg-white p-8 rounded-[2rem] shadow-sm">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-heart-pulse"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Wellness Guide</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Empathetic AI for mental health centers and therapists.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div onclick="openChat('therapy')" class="demo-card p-6 border border-slate-100">
+                    <i class="fa-solid fa-heart-pulse text-emerald-500 mb-3 text-xl"></i>
+                    <h4 class="font-bold">Wellness AI</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Health & Wellness</p>
                 </div>
-
-                <!-- Receptionist -->
-                <div onclick="openDemo('reception')" class="demo-card bg-white p-8 rounded-[2rem] shadow-sm">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-bell-concierge"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Front-Desk AI</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Booking and FAQ agent for offices and hospitality.</p>
+                <div onclick="openChat('reception')" class="demo-card p-6 border border-slate-100">
+                    <i class="fa-solid fa-bell-concierge text-blue-500 mb-3 text-xl"></i>
+                    <h4 class="font-bold">Receptionist</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Hospitality / Corporate</p>
                 </div>
-
-                <!-- Real Estate -->
-                <div onclick="openDemo('realestate')" class="demo-card bg-white p-8 rounded-[2rem] shadow-sm">
-                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-house-user"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Property Agent</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Property tours and lead qualification for Realtors.</p>
+                <div onclick="openChat('realestate')" class="demo-card p-6 border border-slate-100">
+                    <i class="fa-solid fa-house-user text-amber-500 mb-3 text-xl"></i>
+                    <h4 class="font-bold">Property AI</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Real Estate Sales</p>
                 </div>
-
-                <!-- Retail -->
-                <div onclick="openDemo('retail')" class="demo-card bg-white p-8 rounded-[2rem] shadow-sm">
-                    <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                    <h4 class="font-bold text-lg mb-2">Sales Specialist</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed">Upselling and fashion advice for e-commerce shops.</p>
+                <div onclick="openChat('voice')" class="demo-card p-6 border border-slate-100 bg-indigo-50">
+                    <i class="fa-solid fa-microphone-lines text-indigo-600 mb-3 text-xl pulse"></i>
+                    <h4 class="font-bold">Voice Demo</h4>
+                    <p class="text-[10px] text-indigo-400 mt-1 uppercase font-bold">Speech-to-Text</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Dashboard -->
-    <section id="work-dashboard" class="py-24 px-6">
+    <!-- Work Dashboard (Subtle proof of life) -->
+    <section id="work-dashboard" class="py-20 px-6 bg-slate-50 border-y border-slate-100">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
-                <i class="fa-solid fa-list-check text-indigo-600"></i>
-                Work Dashboard
-            </h2>
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 mb-8">Internal Work Dashboard</h2>
             <div class="space-y-4">
-                <div class="glass-card p-6 rounded-2xl flex justify-between items-center">
+                <div class="glass-card p-5 rounded-2xl flex justify-between items-center bg-white shadow-sm">
                     <div>
-                        <h3 class="font-bold text-lg">AI Demo Hub V1</h3>
-                        <p class="text-slate-500 text-sm">Interactive Industry-Specific Models</p>
+                        <p class="font-bold text-sm">Deployment: AI Lab V2</p>
+                        <p class="text-[10px] text-slate-400">Integrated Voice and Lead Capture logic</p>
                     </div>
-                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full uppercase">Deployed</span>
+                    <span class="text-[9px] font-bold px-2 py-1 bg-indigo-100 text-indigo-600 rounded">LIVE</span>
                 </div>
-                <div class="glass-card p-6 rounded-2xl flex justify-between items-center opacity-60">
+                <div class="glass-card p-5 rounded-2xl flex justify-between items-center bg-white shadow-sm opacity-50">
                     <div>
-                        <h3 class="font-bold text-lg">Client CRM Integration</h3>
-                        <p class="text-slate-500 text-sm">Automated Backend Flow</p>
+                        <p class="font-bold text-sm">Backend: Lead CRM Sync</p>
+                        <p class="text-[10px] text-slate-400">Automated intake to central dashboard</p>
                     </div>
-                    <span class="px-3 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded-full uppercase">In Progress</span>
+                    <span class="text-[9px] font-bold px-2 py-1 bg-slate-200 text-slate-500 rounded">PENDING</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="py-24 bg-slate-900 overflow-hidden">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800"><div class="slide-content">Custom Web</div></div>
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800"><div class="slide-content">AI Logic</div></div>
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800"><div class="slide-content">Mobile UI</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-24 px-6 bg-white">
-        <div class="max-w-4xl mx-auto bg-slate-50 p-12 rounded-[3rem] shadow-sm">
-            <h2 class="text-3xl font-bold text-center mb-10">Start Your Project</h2>
-            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Full Name" class="p-4 bg-white border border-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600/20" required>
-                    <input type="email" name="email" placeholder="Business Email" class="p-4 bg-white border border-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600/20" required>
+    <!-- Contact Form (Standard Portfolio Style) -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-2xl mx-auto bg-slate-900 p-12 rounded-[2.5rem] shadow-2xl text-white">
+            <h2 class="text-3xl font-bold text-center mb-8 italic">Contact the Agency</h2>
+            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Full Name" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required>
+                    <input type="email" name="email" placeholder="Email Address" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required>
                 </div>
-                <textarea name="message" rows="4" placeholder="How can our agency help you scale?" class="w-full p-4 bg-white border border-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600/20" required></textarea>
-                <button type="submit" class="w-full py-5 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition">Submit Inquiry</button>
+                <textarea name="message" rows="4" placeholder="How can we help your business?" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required></textarea>
+                <button type="submit" class="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-500 transition uppercase tracking-widest text-xs">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-400 text-xs uppercase tracking-widest">
-        &copy; 2024 AGENTIC SOLUTIONS • ALL RIGHTS RESERVED
+    <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-widest">
+        &copy; 2024 AGENTIC SOLUTIONS • PORTFOLIO & LAB
     </footer>
 
     <!-- Chat Interface -->
     <div id="chat-window">
-        <div id="chat-header" class="p-5 text-white flex justify-between items-center">
+        <div id="chat-header" class="p-5 text-white flex justify-between items-center transition-all">
             <div class="flex items-center gap-3">
-                <i id="header-icon" class="fa-solid fa-robot"></i>
-                <span id="header-name" class="font-bold text-sm">AI Agent</span>
+                <i id="h-icon" class="fa-solid"></i>
+                <span id="h-name" class="font-bold text-sm">AI Agent</span>
             </div>
             <button onclick="closeChat()"><i class="fa-solid fa-times"></i></button>
         </div>
-        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto flex flex-col gap-4 text-sm bg-white"></div>
-        <div class="p-4 border-t border-slate-100 flex gap-2 bg-slate-50">
-            <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 p-3 rounded-xl border border-slate-200 outline-none text-sm">
-            <button onclick="sendMessage()" class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto flex flex-col gap-3 text-sm"></div>
+        <div class="p-4 border-t border-slate-100 flex gap-2 bg-slate-50 items-center">
+            <button onclick="startVoice()" class="w-10 h-10 bg-slate-200 text-slate-500 rounded-xl flex items-center justify-center hover:bg-indigo-100 hover:text-indigo-600"><i class="fa-solid fa-microphone"></i></button>
+            <input type="text" id="chat-input" placeholder="Message..." class="flex-1 p-3 rounded-xl border border-slate-200 outline-none text-sm">
+            <button onclick="sendMessage()" class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-xs"></i></button>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        new Swiper(".mySwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", coverflowEffect: { rotate: 20, stretch: 0, depth: 100, modifier: 1, slideShadows: true }, autoplay: { delay: 3000 } });
-
         const apiKey = "";
         const personas = {
-            therapy: { name: "Wellness Guide", color: "#10b981", icon: "fa-heart-pulse", prompt: "You are a professional digital therapy specialist. Be empathetic and validate feelings. Be brief (2-3 sentences).", intro: "Hello. I'm your Wellness Guide. How are you feeling today?" },
-            reception: { name: "AI Receptionist", color: "#3b82f6", icon: "fa-bell-concierge", prompt: "You are a professional receptionist. Handle bookings and office FAQs. Be formal and helpful. Be brief.", intro: "Welcome to Agentic Offices. How can I assist you today?" },
-            realestate: { name: "Property Agent", color: "#f59e0b", icon: "fa-house-user", prompt: "You are a real estate agent. Help find homes and qualify leads. Be energetic. Be brief.", intro: "Hi! Looking for a new home? Tell me what you're looking for!" },
-            retail: { name: "Sales Specialist", color: "#ec4899", icon: "fa-tags", prompt: "You are an e-commerce sales assistant. Help find products and give fashion advice. Be trendy. Be brief.", intro: "Ready to shop? I can help you find the best deals today!" }
+            therapy: { name: "Wellness Guide", color: "#10b981", icon: "fa-heart-pulse", prompt: "You are a professional therapy specialist. Be empathetic. After 2-3 messages, ask for an email for a wellness guide.", intro: "Hello. I'm your Wellness Guide. How are you feeling?" },
+            reception: { name: "AI Receptionist", color: "#3b82f6", icon: "fa-bell-concierge", prompt: "You are a corporate receptionist. Ask for an email to book a call if user is interested.", intro: "Welcome. How can I assist you with your booking today?" },
+            realestate: { name: "Property Agent", color: "#f59e0b", icon: "fa-house-user", prompt: "You are a real estate agent. Ask for an email to send property listings.", intro: "Hi! Looking for a new property? Tell me your budget!" },
+            voice: { name: "Voice Demo", color: "#6366f1", icon: "fa-microphone-lines", prompt: "Keep responses very short for speech. Remind user to use the mic button.", intro: "I'm the Voice AI. Tap the microphone icon to speak to me!" }
         };
 
         let currentPersona = 'therapy';
+        let msgCount = 0;
         const chatWindow = document.getElementById('chat-window');
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
         const header = document.getElementById('chat-header');
-        const headerName = document.getElementById('header-name');
-        const headerIcon = document.getElementById('header-icon');
 
-        function openDemo(key) {
+        // Traffic Counter
+        setInterval(() => {
+            const el = document.getElementById('v-count');
+            el.innerText = (parseInt(el.innerText.replace(',','')) + Math.floor(Math.random()*2)).toLocaleString();
+        }, 5000);
+
+        function openChat(key) {
             currentPersona = key;
             const p = personas[key];
             header.style.backgroundColor = p.color;
-            headerName.innerText = p.name;
-            headerIcon.className = `fa-solid ${p.icon}`;
+            document.getElementById('h-name').innerText = p.name;
+            document.getElementById('h-icon').className = `fa-solid ${p.icon}`;
             chatMessages.innerHTML = '';
             chatWindow.style.display = 'flex';
+            msgCount = 0;
             addMsg(p.intro, 'ai');
         }
 
@@ -284,6 +251,7 @@
             if (!text) return;
             addMsg(text, 'user');
             chatInput.value = '';
+            msgCount++;
             const loading = addMsg("...", 'ai');
             try {
                 const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
@@ -291,13 +259,25 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt }] }
+                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " (Session msg count: " + msgCount + ")" }] }
                     })
                 });
                 const data = await res.json();
                 loading.remove();
                 addMsg(data.candidates[0].content.parts[0].text, 'ai');
-            } catch (e) { loading.innerText = "Error. Try again."; }
+            } catch (e) { loading.innerText = "Error. Please try again."; }
+        }
+
+        function startVoice() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.start();
+            chatInput.placeholder = "Listening...";
+            recognition.onresult = (event) => {
+                chatInput.value = event.results[0][0].transcript;
+                sendMessage();
+                chatInput.placeholder = "Message...";
+            };
         }
 
         function addMsg(text, sender) {
@@ -308,6 +288,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return d;
         }
+
         chatInput.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
     </script>
 </body>
