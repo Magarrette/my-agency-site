@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents for Global Business.">
-    <title>Agentic Solutions | Elite Digital Engineering</title>
+    <title>Agentic Solutions | High-Proficiency Triple Threat</title>
     
+    <!-- Core Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,6 +27,7 @@
             overflow-x: hidden;
         }
 
+        /* Ambient 3D Background Overlay */
         #hero-canvas {
             position: fixed;
             top: 0;
@@ -65,6 +67,11 @@
             filter: brightness(0.8) contrast(1.1);
         }
 
+        .showcase-card:hover .showcase-img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
         .agent-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -78,13 +85,23 @@
             border-color: rgba(99, 102, 241, 0.3);
             transform: translateY(-10px);
         }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 <body class="bg-slate-950">
 
     <canvas id="hero-canvas"></canvas>
 
-    <!-- Navigation -->
+    <!-- Global Navigation -->
     <nav class="fixed w-full z-[100] nav-blur">
         <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -102,7 +119,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center px-8 text-center pt-20">
         <div class="relative z-10" data-aos="zoom-out">
             <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black tracking-widest uppercase mb-10">
@@ -136,7 +153,7 @@
         </div>
     </section>
 
-    <!-- Pillar Two: Apps -->
+    <!-- Pillar Two: Applications -->
     <section id="apps" class="py-32 px-8 bg-black/40">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -154,71 +171,71 @@
         </div>
     </section>
 
-    <!-- Pillar Three: Specialized AI Agents (Expanded List) -->
+    <!-- Pillar Three: Specialized AI Agents -->
     <section id="agents" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24" data-aos="fade-up">
                 <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
                 <h2 class="text-6xl font-black italic mb-8">Neural AI Agents</h2>
                 <p class="text-slate-400 text-xl max-w-3xl mx-auto font-medium">
-                    We deploy specialized autonomous digital workers tailored for specific industry vertical logic.
+                    Automated digital workers tailored for specific industry vertical logic.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Agent 1 -->
+                <!-- Real Estate -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-house-chimney text-emerald-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Real Estate Agent</h3>
-                    <p class="text-slate-400 font-medium">Autonomous lead qualification, property matching, and automated scheduling for viewings 24/7.</p>
+                    <p class="text-slate-400 font-medium">Autonomous lead qualification and property matching logic available 24/7.</p>
                 </div>
-                <!-- Agent 2 -->
+                <!-- Reception -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-user-tie text-blue-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Receptionist Agent</h3>
-                    <p class="text-slate-400 font-medium">High-level frontline management. Handles inquiries, redirects calls, and manages complex calendars.</p>
+                    <p class="text-slate-400 font-medium">Handles high-level inquiries and calendar synchronization for complex organizations.</p>
                 </div>
-                <!-- Agent 3 -->
+                <!-- Medical -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-stethoscope text-purple-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Medical Assistant</h3>
-                    <p class="text-slate-400 font-medium">HIPAA-compliant intake logic, appointment triage, and patient follow-up automation.</p>
+                    <p class="text-slate-400 font-medium">HIPAA-compliant intake logic and automated appointment triage.</p>
                 </div>
-                <!-- Agent 4 -->
+                <!-- Logistics -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-cart-shopping text-amber-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">E-comm Logistics</h3>
-                    <p class="text-slate-400 font-medium">Real-time order tracking, inventory alerts, and personalized cross-selling intelligence.</p>
+                    <p class="text-slate-400 font-medium">Inventory intelligence and real-time order tracking automation.</p>
                 </div>
-                <!-- Agent 5 -->
+                <!-- Sales -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-comments-dollar text-rose-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Sales Closer</h3>
-                    <p class="text-slate-400 font-medium">Persuasion-optimized agents trained on top-tier sales scripts to convert cold traffic into leads.</p>
+                    <p class="text-slate-400 font-medium">Persuasion-optimized agents for cold traffic conversion and lead generation.</p>
                 </div>
-                <!-- Agent 6 -->
+                <!-- Law -->
                 <div class="agent-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-scale-balanced text-indigo-500"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase italic">Legal Intake</h3>
-                    <p class="text-slate-400 font-medium">Automated case evaluation and document collection for high-proficiency law firms.</p>
+                    <p class="text-slate-400 font-medium">Automated case evaluation and secure document collection.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Form (Linked to Formspree) -->
     <section id="contact" class="py-40 px-8">
         <div class="max-w-4xl mx-auto glass p-12 lg:p-20 border border-white/10">
             <div class="text-center mb-16">
@@ -235,10 +252,14 @@
                 </div>
             </div>
             
-            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
+            <form action="https://formspree.io/f/{form_id}" method="post">
+  <label for="email">Your Email</label>
+  <input name="Email" id="email" type="email">
+  <button type="submit">Submit</button>
+</form>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
-                    <input type="email" name="email" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
+                    <input type="email" name="_replyto" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
                 </div>
                 <textarea name="message" rows="4" placeholder="DESCRIBE YOUR AGENT OR WEB REQUIREMENTS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
                 <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
@@ -246,17 +267,18 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-20 text-center opacity-30">
         <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • nexadigipg@gmail.com</p>
     </footer>
 
+    <!-- Three.js Visual Engine -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Background Animation Logic
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
@@ -273,6 +295,7 @@
         function animate() {
             requestAnimationFrame(animate);
             mesh.rotation.y += 0.001;
+            mesh.rotation.x += 0.0005;
             renderer.render(scene, camera);
         }
         animate();
