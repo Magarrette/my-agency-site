@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agentic Solutions - Elite Websites, Mobile Apps, and AI Agents for Global Business.">
-    <title>Agentic Solutions | High-Proficiency Triple Threat</title>
+    <title>Agentic Solutions | Elite Digital Engineering</title>
     
-    <!-- External Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* 3D Canvas Background */
         #hero-canvas {
             position: fixed;
             top: 0;
@@ -67,42 +65,26 @@
             filter: brightness(0.8) contrast(1.1);
         }
 
-        .showcase-card:hover .showcase-img {
-            transform: scale(1.05);
-            filter: brightness(1);
+        .agent-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 32px;
+            transition: all 0.4s ease;
         }
 
-        .floating-robot {
-            animation: float 6s ease-in-out infinite;
+        .agent-card:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-10px);
         }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* AI Chat Window */
-        #chat-window { 
-            position: fixed; bottom: 24px; right: 24px; width: 420px; height: 680px; 
-            display: none; flex-direction: column; z-index: 9999;
-            background: #0f172a; border-radius: 32px; border: 1px solid var(--border);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-            animation: slideUp 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        .msg { padding: 16px 20px; border-radius: 20px; font-size: 0.9rem; line-height: 1.6; max-width: 85%; }
-        .msg-user { background: var(--primary); align-self: flex-end; border-bottom-right-radius: 4px; }
-        .msg-ai { background: rgba(255,255,255,0.05); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--border); }
     </style>
 </head>
 <body class="bg-slate-950">
 
     <canvas id="hero-canvas"></canvas>
 
-    <!-- Global Navigation -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-[100] nav-blur">
         <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -120,7 +102,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="relative min-h-screen flex items-center justify-center px-8 text-center pt-20">
         <div class="relative z-10" data-aos="zoom-out">
             <div class="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black tracking-widest uppercase mb-10">
@@ -133,14 +115,10 @@
             <p class="text-slate-400 max-w-2xl mx-auto text-xl md:text-2xl font-medium mb-16">
                 Elite digital engineering across three domains. Websites. Mobile. Intelligence.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <button onclick="document.getElementById('websites').scrollIntoView()" class="px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-indigo-600 hover:text-white transition-all transform hover:-translate-y-1">VIEW ECOSYSTEM</button>
-                <button onclick="document.getElementById('contact').scrollIntoView()" class="px-10 py-5 bg-slate-900 border border-white/10 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:-translate-y-1">INQUIRE</button>
-            </div>
         </div>
     </section>
 
-    <!-- Pillar 01: Websites -->
+    <!-- Pillar One: Websites -->
     <section id="websites" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -150,10 +128,6 @@
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
                         We don't just build sites; we engineer conversion-heavy ecosystems. Our web solutions project authority and handle enterprise-scale traffic.
                     </p>
-                    <ul class="space-y-4 mb-12">
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Next-Gen Performance Optimization</li>
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-indigo-500"></i> Hardened Data Protection</li>
-                    </ul>
                 </div>
                 <div class="showcase-card relative" data-aos="fade-left">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Web Showcase" class="showcase-img relative glass p-2">
@@ -162,7 +136,7 @@
         </div>
     </section>
 
-    <!-- Pillar 02: Applications -->
+    <!-- Pillar Two: Apps -->
     <section id="apps" class="py-32 px-8 bg-black/40">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -173,31 +147,72 @@
                     <div class="text-purple-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR TWO</div>
                     <h2 class="text-6xl font-black italic mb-8">Mobile <br>Applications</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        Native-grade performance for iOS and Android. High-proficiency mobile applications that integrate biometric security and fluid UX patterns.
+                        Native-grade performance for iOS and Android. High-proficiency mobile applications that integrate biometric security.
                     </p>
-                    <ul class="space-y-4 mb-12">
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Cross-Platform Fluidity</li>
-                        <li class="flex items-center gap-4 text-slate-300 font-bold"><i class="fa-solid fa-check text-purple-500"></i> Secure API Vaulting</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pillar 03: AI Agents -->
+    <!-- Pillar Three: Specialized AI Agents (Expanded List) -->
     <section id="agents" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div data-aos="fade-right">
-                    <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
-                    <h2 class="text-6xl font-black italic mb-8">Neural <br>AI Agents</h2>
-                    <p class="text-slate-400 text-xl leading-relaxed mb-10 font-medium">
-                        Autonomous digital workers handling high-level business logic, operating 24/7 without oversight.
-                    </p>
-                    <button onclick="openDemo('reception')" class="px-8 py-4 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 font-black rounded-xl hover:bg-emerald-600 hover:text-white transition-all">ACTIVATE AGENT DEMO</button>
+            <div class="text-center mb-24" data-aos="fade-up">
+                <div class="text-emerald-500 font-black text-xs tracking-[0.5em] uppercase mb-4">PILLAR THREE</div>
+                <h2 class="text-6xl font-black italic mb-8">Neural AI Agents</h2>
+                <p class="text-slate-400 text-xl max-w-3xl mx-auto font-medium">
+                    We deploy specialized autonomous digital workers tailored for specific industry vertical logic.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Agent 1 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-house-chimney text-emerald-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Real Estate Agent</h3>
+                    <p class="text-slate-400 font-medium">Autonomous lead qualification, property matching, and automated scheduling for viewings 24/7.</p>
                 </div>
-                <div class="showcase-card relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Robot" class="showcase-img relative glass p-2 floating-robot">
+                <!-- Agent 2 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-user-tie text-blue-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Receptionist Agent</h3>
+                    <p class="text-slate-400 font-medium">High-level frontline management. Handles inquiries, redirects calls, and manages complex calendars.</p>
+                </div>
+                <!-- Agent 3 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-stethoscope text-purple-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Medical Assistant</h3>
+                    <p class="text-slate-400 font-medium">HIPAA-compliant intake logic, appointment triage, and patient follow-up automation.</p>
+                </div>
+                <!-- Agent 4 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cart-shopping text-amber-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">E-comm Logistics</h3>
+                    <p class="text-slate-400 font-medium">Real-time order tracking, inventory alerts, and personalized cross-selling intelligence.</p>
+                </div>
+                <!-- Agent 5 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-comments-dollar text-rose-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Sales Closer</h3>
+                    <p class="text-slate-400 font-medium">Persuasion-optimized agents trained on top-tier sales scripts to convert cold traffic into leads.</p>
+                </div>
+                <!-- Agent 6 -->
+                <div class="agent-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-scale-balanced text-indigo-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Legal Intake</h3>
+                    <p class="text-slate-400 font-medium">Automated case evaluation and document collection for high-proficiency law firms.</p>
                 </div>
             </div>
         </div>
@@ -208,14 +223,11 @@
         <div class="max-w-4xl mx-auto glass p-12 lg:p-20 border border-white/10">
             <div class="text-center mb-16">
                 <h2 class="text-5xl font-black italic mb-4 uppercase tracking-tighter">Initiate <span class="text-indigo-500">Contact.</span></h2>
-                
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                    <!-- Secure Email Link -->
                     <div class="inline-flex items-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.location.href='mailto:nexadigipg@gmail.com'">
                         <i class="fa-solid fa-envelope text-indigo-400 group-hover:scale-110 transition"></i>
                         <span class="text-xs font-black tracking-widest uppercase">nexadigipg@gmail.com</span>
                     </div>
-                    <!-- LinkedIn Link -->
                     <div class="inline-flex items-center gap-3 px-6 py-4 bg-[#0077b5]/10 border border-[#0077b5]/30 rounded-2xl hover:bg-[#0077b5]/20 transition-colors group cursor-pointer w-full sm:w-auto" onclick="window.open('https://linkedin.com/in/jake-magarrette', '_blank')">
                         <i class="fa-brands fa-linkedin text-[#0077b5] group-hover:scale-110 transition text-lg"></i>
                         <span class="text-xs font-black tracking-widest uppercase">LinkedIn Verified</span>
@@ -228,128 +240,43 @@
                     <input type="text" name="name" placeholder="IDENTIFIER" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
                     <input type="email" name="email" placeholder="SECURE EMAIL" required class="p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800">
                 </div>
-                <textarea name="message" rows="4" placeholder="PROJECT PARAMETERS AND KPI GOALS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
+                <textarea name="message" rows="4" placeholder="DESCRIBE YOUR AGENT OR WEB REQUIREMENTS..." required class="w-full p-5 bg-black/60 border border-white/10 rounded-2xl outline-none focus:border-indigo-500 text-white font-bold placeholder:text-slate-800"></textarea>
                 <button type="submit" class="w-full py-6 bg-indigo-600 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all uppercase tracking-[0.5em] text-sm shadow-2xl">Deploy Inquiry</button>
             </form>
         </div>
     </section>
 
-    <!-- Site Footer -->
-    <footer class="py-20 text-center opacity-40">
-        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • JAKE MAGARRETTE • nexadigipg@gmail.com</p>
+    <footer class="py-20 text-center opacity-30">
+        <p class="text-[9px] font-black uppercase tracking-[1em]">© 2026 AGENTIC SOLUTIONS • nexadigipg@gmail.com</p>
     </footer>
 
-    <!-- AI Interactivity Interface -->
-    <div id="chat-window">
-        <div id="chat-header" class="p-8 text-white flex justify-between items-center bg-indigo-600 rounded-t-[32px]">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><i id="h-icon" class="fa-solid"></i></div>
-                <div>
-                    <p id="h-name" class="font-black text-sm"></p>
-                    <p class="text-[8px] opacity-60 font-bold uppercase tracking-widest">Neural Sync Active</p>
-                </div>
-            </div>
-            <button onclick="closeChat()" class="text-white/50 hover:text-white transition"><i class="fa-solid fa-times text-xl"></i></button>
-        </div>
-        <div id="chat-messages" class="flex-1 p-8 overflow-y-auto flex flex-col gap-6 bg-[#0f172a]"></div>
-        <div class="p-8 border-t border-white/5 flex gap-4 bg-[#0f172a] rounded-b-[32px]">
-            <input type="text" id="chat-input" placeholder="Type query..." class="flex-1 bg-transparent outline-none font-bold text-white placeholder:text-slate-700">
-            <button onclick="sendMessage()" class="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-xl"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // --- PASTE YOUR GEMINI API KEY BELOW ---
-        const apiKey = "AIzaSyA07gNPKxdAmC9Re6tlzEOEil2nLJd7Gk8"; 
-
-        const personas = {
-            reception: { name: "Corp Assistant", color: "#6366f1", icon: "fa-robot", prompt: "You are an elite corporate receptionist for Agentic Solutions.", intro: "System active. How can I assist with your deployment?" }
-        };
-
-        let currentPersona = 'reception';
-        const chatWindow = document.getElementById('chat-window');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-
-        function openDemo(key) {
-            currentPersona = key;
-            const p = personas[key];
-            document.getElementById('chat-header').style.backgroundColor = p.color;
-            document.getElementById('h-name').innerText = p.name;
-            document.getElementById('h-icon').className = `fa-solid ${p.icon}`;
-            chatMessages.innerHTML = '';
-            chatWindow.style.display = 'flex';
-            addMsg(p.intro, 'ai');
-        }
-
-        function closeChat() { chatWindow.style.display = 'none'; }
-
-        async function sendMessage() {
-            const text = chatInput.value.trim();
-            if(!text) return;
-            
-            if(!apiKey || apiKey === "") {
-                addMsg(text, 'user');
-                addMsg("SYSTEM NOTICE: This demo requires a Google API Key. Please insert your key into the 'apiKey' variable at the bottom of the source code.", 'ai');
-                chatInput.value = '';
-                return;
-            }
-
-            addMsg(text, 'user');
-            chatInput.value = '';
-            const loading = addMsg("Syncing with Neural Core...", 'ai');
-
-            try {
-                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: text }] }],
-                        systemInstruction: { parts: [{ text: personas[currentPersona].prompt + " Keep response short, professional, and technical." }] }
-                    })
-                });
-                const data = await res.json();
-                loading.remove();
-                if(data.candidates && data.candidates[0].content) {
-                    addMsg(data.candidates[0].content.parts[0].text, 'ai');
-                } else {
-                    addMsg("Sync failed. Verify API key permissions in Google AI Studio.", 'ai');
-                }
-            } catch (e) { 
-                loading.remove();
-                addMsg("Transmission failed. Network or API error.", 'ai'); 
-            }
-        }
-
-        function addMsg(text, sender) {
-            const d = document.createElement('div');
-            d.className = `msg shadow-2xl ${sender === 'user' ? 'msg-user font-black ml-auto' : 'msg-ai font-medium mr-auto'}`;
-            d.innerText = text;
-            chatMessages.appendChild(d);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            return d;
-        }
-
-        // Background Scene
+        // Background Animation Logic
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const group = new THREE.Group();
         const geometry = new THREE.TorusKnotGeometry(2.5, 0.5, 120, 24);
         const material = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.1 });
-        const knot = new THREE.Mesh(geometry, material);
-        scene.add(knot);
+        const mesh = new THREE.Mesh(geometry, material);
+        group.add(mesh);
+        scene.add(group);
         camera.position.z = 8;
-        function animate() { requestAnimationFrame(animate); knot.rotation.y += 0.005; renderer.render(scene, camera); }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            mesh.rotation.y += 0.001;
+            renderer.render(scene, camera);
+        }
         animate();
 
-        chatInput.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
