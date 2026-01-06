@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Solutions | Professional AI & Web Agency</title>
+    <title>Agentic Solutions | Professional Web & AI Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background: #ffffff; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background: #ffffff; color: #0f172a; }
         
         .ai-gradient {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
@@ -23,41 +22,39 @@
             transition: all 0.3s ease;
         }
 
-        .glass-card:hover {
-            border-color: #6366f1;
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.1);
-        }
-
         .demo-card {
             cursor: pointer;
             border-radius: 24px;
-            transition: all 0.3s ease;
             background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .demo-card:hover {
-            background: #f1f5f9;
             transform: translateY(-5px);
+            border-color: #6366f1;
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
         }
 
-        /* Chat Widget */
+        /* Chat Widget Styles */
         #chat-window { 
-            position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; 
+            position: fixed; bottom: 20px; right: 20px; width: 360px; height: 580px; 
             display: none; flex-direction: column; z-index: 1000;
-            background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: white; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             border: 1px solid #e2e8f0; overflow: hidden;
         }
-        .msg-user { background: #6366f1; color: white; align-self: flex-end; border-radius: 15px 15px 0 15px; }
-        .msg-ai { background: #f1f5f9; color: #1e293b; align-self: flex-start; border-radius: 15px 15px 15px 0; }
+
+        .msg-user { background: #6366f1; color: white; align-self: flex-end; border-radius: 18px 18px 4px 18px; }
+        .msg-ai { background: #f1f5f9; color: #1e293b; align-self: flex-start; border-radius: 18px 18px 18px 4px; }
         
-        .pulse { animation: pulse-anim 2s infinite; }
-        @keyframes pulse-anim { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        .pulse-icon { animation: pulse-red 2s infinite; }
+        @keyframes pulse-red { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="text-slate-900">
+<body>
 
-    <!-- Nav -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -65,158 +62,149 @@
                 </div>
                 <span class="text-xl font-bold tracking-tight">AGENTIC SOLUTIONS</span>
             </div>
-            <a href="#contact" class="px-6 py-2 bg-indigo-600 text-white rounded-full text-sm font-bold hover:bg-indigo-700 transition">Contact Us</a>
+            <div class="hidden md:flex space-x-8 items-center text-sm font-semibold">
+                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
+                <a href="#demo-lab" class="hover:text-indigo-600 transition">AI Lab</a>
+                <a href="#contact" class="px-6 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">Inquire</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Original Concept) -->
     <section class="pt-44 pb-20 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-            The Future of <br><span class="ai-gradient">Digital Agency.</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
+            Design. Code. <br><span class="ai-gradient">Deploy Intelligence.</span>
         </h1>
-        <p class="text-slate-500 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
-            High-end web design, mobile development, and specialized AI automation. <br>
-            We build the systems that help businesses scale.
+        <p class="text-slate-500 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+            High-performance websites and custom AI agents for forward-thinking businesses. 
+            Automate your growth with our specialized technology suite.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
-            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" class="flex items-center space-x-3 px-10 py-5 bg-white border border-slate-200 rounded-2xl w-full sm:w-auto hover:shadow-lg transition">
-                <i class="fa-brands fa-linkedin text-indigo-600 text-2xl"></i>
+        <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
+            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" class="flex items-center space-x-4 px-10 py-5 bg-white border border-slate-200 rounded-2xl w-full sm:w-auto hover:border-indigo-600 transition group">
+                <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition">
+                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </div>
                 <div class="text-left">
-                    <p class="text-[10px] uppercase text-slate-400 font-bold leading-none mb-1">Official Profile</p>
-                    <p class="font-bold text-slate-800 leading-none">Connect on LinkedIn</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-400">Official Profile</p>
+                    <p class="font-bold text-slate-800">Jake Magarrette</p>
                 </div>
             </a>
-            <a href="#demo-lab" class="px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:bg-black transition w-full sm:w-auto">
-                Explore AI Demos
-            </a>
+            <a href="#demo-lab" class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold shadow-xl hover:bg-black transition">Explore AI Demos</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-20 px-6 bg-slate-50">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-3xl">
-                <i class="fa-solid fa-code text-indigo-600 text-2xl mb-4"></i>
-                <h3 class="font-bold text-xl mb-2">Web Development</h3>
-                <p class="text-slate-500 text-sm">Responsive, lightning-fast websites built with modern frameworks.</p>
+    <section id="services" class="py-24 bg-slate-50 px-6 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fa-solid fa-code text-indigo-600 text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Full-stack web applications designed for speed, scale, and high conversion rates.</p>
             </div>
-            <div class="glass-card p-8 rounded-3xl">
-                <i class="fa-solid fa-brain text-purple-600 text-2xl mb-4"></i>
-                <h3 class="font-bold text-xl mb-2">AI Implementation</h3>
-                <p class="text-slate-500 text-sm">Custom LLM agents tailored to your business industry.</p>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fa-solid fa-microchip text-purple-600 text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">AI Agents</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Custom LLM-powered agents for therapy, sales, and automated customer support.</p>
             </div>
-            <div class="glass-card p-8 rounded-3xl">
-                <i class="fa-solid fa-mobile-screen-button text-pink-600 text-2xl mb-4"></i>
-                <h3 class="font-bold text-xl mb-2">Mobile Solutions</h3>
-                <p class="text-slate-500 text-sm">Cross-platform apps that provide seamless user experiences.</p>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fa-solid fa-chart-line text-pink-600 text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Automation</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">End-to-end business process automation to eliminate repetitive manual tasks.</p>
             </div>
         </div>
     </section>
 
-    <!-- AI DEMO LAB (Upgraded Feature) -->
     <section id="demo-lab" class="py-24 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                <div>
-                    <h2 class="text-3xl font-bold mb-2">Interactive AI <span class="text-indigo-600">Lab</span></h2>
-                    <p class="text-slate-500">Select an agent to test our automation capabilities.</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="text-left">
+                    <h2 class="text-4xl font-extrabold mb-4 italic leading-none">The Showroom <span class="text-indigo-600">Lab</span></h2>
+                    <p class="text-slate-500">Select an agent below to interact with our custom AI implementations.</p>
                 </div>
-                <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-[10px] font-bold tracking-widest flex items-center gap-3">
-                    <span class="w-2 h-2 bg-emerald-500 rounded-full pulse"></span> SYSTEM: ONLINE | VISITORS: <span id="v-count">2,411</span>
+                <div class="bg-indigo-50 px-6 py-3 rounded-2xl border border-indigo-100 flex items-center gap-4">
+                    <div class="w-3 h-3 bg-emerald-500 rounded-full pulse-icon"></div>
+                    <span class="text-xs font-bold text-indigo-900 tracking-widest uppercase">System: Operational</span>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div onclick="openChat('therapy')" class="demo-card p-6 border border-slate-100">
-                    <i class="fa-solid fa-heart-pulse text-emerald-500 mb-3 text-xl"></i>
-                    <h4 class="font-bold">Wellness AI</h4>
-                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Health & Wellness</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div onclick="openDemo('therapy')" class="demo-card p-8">
+                    <i class="fa-solid fa-heart-pulse text-emerald-500 text-2xl mb-6"></i>
+                    <h4 class="font-bold text-lg mb-2">Wellness Agent</h4>
+                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Health & Support</p>
+                    <p class="text-xs text-slate-500">Empathetic support AI for wellness centers.</p>
                 </div>
-                <div onclick="openChat('reception')" class="demo-card p-6 border border-slate-100">
-                    <i class="fa-solid fa-bell-concierge text-blue-500 mb-3 text-xl"></i>
-                    <h4 class="font-bold">Receptionist</h4>
-                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Hospitality / Corporate</p>
-                </div>
-                <div onclick="openChat('realestate')" class="demo-card p-6 border border-slate-100">
-                    <i class="fa-solid fa-house-user text-amber-500 mb-3 text-xl"></i>
-                    <h4 class="font-bold">Property AI</h4>
-                    <p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Real Estate Sales</p>
-                </div>
-                <div onclick="openChat('voice')" class="demo-card p-6 border border-slate-100 bg-indigo-50">
-                    <i class="fa-solid fa-microphone-lines text-indigo-600 mb-3 text-xl pulse"></i>
-                    <h4 class="font-bold">Voice Demo</h4>
-                    <p class="text-[10px] text-indigo-400 mt-1 uppercase font-bold">Speech-to-Text</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Work Dashboard (Subtle proof of life) -->
-    <section id="work-dashboard" class="py-20 px-6 bg-slate-50 border-y border-slate-100">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 mb-8">Internal Work Dashboard</h2>
-            <div class="space-y-4">
-                <div class="glass-card p-5 rounded-2xl flex justify-between items-center bg-white shadow-sm">
-                    <div>
-                        <p class="font-bold text-sm">Deployment: AI Lab V2</p>
-                        <p class="text-[10px] text-slate-400">Integrated Voice and Lead Capture logic</p>
-                    </div>
-                    <span class="text-[9px] font-bold px-2 py-1 bg-indigo-100 text-indigo-600 rounded">LIVE</span>
+                <div onclick="openDemo('reception')" class="demo-card p-8">
+                    <i class="fa-solid fa-bell-concierge text-blue-500 text-2xl mb-6"></i>
+                    <h4 class="font-bold text-lg mb-2">AI Receptionist</h4>
+                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Corporate FAQ</p>
+                    <p class="text-xs text-slate-500">Booking and inquiry agent for offices.</p>
                 </div>
-                <div class="glass-card p-5 rounded-2xl flex justify-between items-center bg-white shadow-sm opacity-50">
-                    <div>
-                        <p class="font-bold text-sm">Backend: Lead CRM Sync</p>
-                        <p class="text-[10px] text-slate-400">Automated intake to central dashboard</p>
-                    </div>
-                    <span class="text-[9px] font-bold px-2 py-1 bg-slate-200 text-slate-500 rounded">PENDING</span>
+
+                <div onclick="openDemo('realestate')" class="demo-card p-8">
+                    <i class="fa-solid fa-house-chimney text-amber-500 text-2xl mb-6"></i>
+                    <h4 class="font-bold text-lg mb-2">Property Agent</h4>
+                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest leading-none mb-3">Sales Lead Gen</p>
+                    <p class="text-xs text-slate-500">Qualification agent for real estate firms.</p>
                 </div>
+
+                <div onclick="openDemo('voice')" class="demo-card p-8 bg-indigo-600 border-none text-white shadow-xl">
+                    <i class="fa-solid fa-microphone-lines text-2xl mb-6 pulse-icon"></i>
+                    <h4 class="font-bold text-lg mb-2">Voice Tech Demo</h4>
+                    <p class="text-xs text-indigo-200 uppercase font-bold tracking-widest leading-none mb-3">Speech Recognition</p>
+                    <p class="text-xs text-indigo-100">Live Speech-to-Text interaction tech.</p>
+                </div>AIzaSyA07gNPKxdAmC9Re6tlzEOEil2nLJd7Gk8
             </div>
         </div>
     </section>
 
-    <!-- Contact Form (Standard Portfolio Style) -->
-    <section id="contact" class="py-24 px-6">
-        <div class="max-w-2xl mx-auto bg-slate-900 p-12 rounded-[2.5rem] shadow-2xl text-white">
-            <h2 class="text-3xl font-bold text-center mb-8 italic">Contact the Agency</h2>
-            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Full Name" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required>
-                    <input type="email" name="email" placeholder="Email Address" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required>
+    <section id="contact" class="py-24 px-6 bg-slate-900">
+        <div class="max-w-3xl mx-auto bg-white/5 p-12 rounded-[3rem] border border-white/10 backdrop-blur-sm">
+            <h2 class="text-3xl font-bold text-center text-white mb-10 italic">Inquire About Our Services</h2>
+            <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Full Name" class="p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required>
+                    <input type="email" name="email" placeholder="Business Email" class="p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required>
                 </div>
-                <textarea name="message" rows="4" placeholder="How can we help your business?" class="w-full p-4 bg-white/10 rounded-xl outline-none border border-white/20 focus:border-indigo-500" required></textarea>
-                <button type="submit" class="w-full py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-500 transition uppercase tracking-widest text-xs">Submit Inquiry</button>
+                <textarea name="message" rows="4" placeholder="How can we help your business scale?" class="w-full p-4 bg-white/10 text-white rounded-xl outline-none border border-white/10 focus:border-indigo-500 transition" required></textarea>
+                <button type="submit" class="w-full py-5 bg-indigo-600 text-white font-bold rounded-xl shadow-2xl hover:bg-indigo-700 transition uppercase tracking-widest">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-400 text-[10px] uppercase tracking-widest">
-        &copy; 2024 AGENTIC SOLUTIONS • PORTFOLIO & LAB
+    <footer class="py-12 text-center text-slate-500 text-[10px] uppercase tracking-[0.3em]">
+        &copy; 2024 AGENTIC SOLUTIONS • WEB DESIGN • AI AGENTS • AUTOMATION
     </footer>
 
-    <!-- Chat Interface -->
     <div id="chat-window">
         <div id="chat-header" class="p-5 text-white flex justify-between items-center transition-all">
             <div class="flex items-center gap-3">
                 <i id="h-icon" class="fa-solid"></i>
-                <span id="h-name" class="font-bold text-sm">AI Agent</span>
+                <div class="leading-none">
+                    <p id="h-name" class="font-bold text-sm">AI Agent</p>
+                    <p class="text-[9px] opacity-70 uppercase font-bold tracking-widest">Demo Environment</p>
+                </div>
             </div>
             <button onclick="closeChat()"><i class="fa-solid fa-times"></i></button>
         </div>
-        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto flex flex-col gap-3 text-sm"></div>
+        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto flex flex-col gap-4 text-sm bg-white"></div>
         <div class="p-4 border-t border-slate-100 flex gap-2 bg-slate-50 items-center">
-            <button onclick="startVoice()" class="w-10 h-10 bg-slate-200 text-slate-500 rounded-xl flex items-center justify-center hover:bg-indigo-100 hover:text-indigo-600"><i class="fa-solid fa-microphone"></i></button>
-            <input type="text" id="chat-input" placeholder="Message..." class="flex-1 p-3 rounded-xl border border-slate-200 outline-none text-sm">
-            <button onclick="sendMessage()" class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+            <button onclick="startVoice()" class="w-10 h-10 bg-slate-200 text-slate-600 rounded-xl flex items-center justify-center hover:bg-indigo-100 hover:text-indigo-600 transition">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+            <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 p-3 rounded-xl border border-slate-200 outline-none text-sm">
+            <button onclick="sendMessage()" class="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
         </div>
     </div>
 
     <script>
-        const apiKey = "";
+        // PASTE YOUR KEY HERE
+        const apiKey = ""; 
+
         const personas = {
-            therapy: { name: "Wellness Guide", color: "#10b981", icon: "fa-heart-pulse", prompt: "You are a professional therapy specialist. Be empathetic. After 2-3 messages, ask for an email for a wellness guide.", intro: "Hello. I'm your Wellness Guide. How are you feeling?" },
-            reception: { name: "AI Receptionist", color: "#3b82f6", icon: "fa-bell-concierge", prompt: "You are a corporate receptionist. Ask for an email to book a call if user is interested.", intro: "Welcome. How can I assist you with your booking today?" },
-            realestate: { name: "Property Agent", color: "#f59e0b", icon: "fa-house-user", prompt: "You are a real estate agent. Ask for an email to send property listings.", intro: "Hi! Looking for a new property? Tell me your budget!" },
-            voice: { name: "Voice Demo", color: "#6366f1", icon: "fa-microphone-lines", prompt: "Keep responses very short for speech. Remind user to use the mic button.", intro: "I'm the Voice AI. Tap the microphone icon to speak to me!" }
+            therapy: { name: "Wellness Guide", color: "#10b981", icon: "fa-heart-pulse", prompt: "Professional therapy agent. Empathic. After 2-3 msgs, ask for email to send a guide.", intro: "Hello. I'm your Wellness Guide. How are you feeling today?" },
+            reception: { name: "AI Receptionist", color: "#3b82f6", icon: "fa-bell-concierge", prompt: "Corporate receptionist. Ask for email to book a call if interested.", intro: "Welcome. How can I assist you with your booking or inquiry today?" },
+            realestate: { name: "Property Agent", color: "#f59e0b", icon: "fa-house-chimney", prompt: "Real estate agent. Ask for email to send property listings.", intro: "Hi! Looking for a dream home or investment? Tell me your budget!" },
+            voice: { name: "Voice Demo", color: "#6366f1", icon: "fa-microphone-lines", prompt: "Keep responses short. Remind user to use the microphone button.", intro: "I'm the Voice AI. Tap the microphone icon below to talk to me!" }
         };
 
         let currentPersona = 'therapy';
@@ -226,13 +214,7 @@
         const chatInput = document.getElementById('chat-input');
         const header = document.getElementById('chat-header');
 
-        // Traffic Counter
-        setInterval(() => {
-            const el = document.getElementById('v-count');
-            el.innerText = (parseInt(el.innerText.replace(',','')) + Math.floor(Math.random()*2)).toLocaleString();
-        }, 5000);
-
-        function openChat(key) {
+        function openDemo(key) {
             currentPersona = key;
             const p = personas[key];
             header.style.backgroundColor = p.color;
@@ -252,9 +234,15 @@
             addMsg(text, 'user');
             chatInput.value = '';
             msgCount++;
-            const loading = addMsg("...", 'ai');
+            
+            if (!apiKey) {
+                addMsg("⚠️ API Key is missing. Please add your Gemini key to the source code to enable the AI brain.", 'ai');
+                return;
+            }
+
+            const loading = addMsg("Thinking...", 'ai');
             try {
-                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -264,8 +252,15 @@
                 });
                 const data = await res.json();
                 loading.remove();
-                addMsg(data.candidates[0].content.parts[0].text, 'ai');
-            } catch (e) { loading.innerText = "Error. Please try again."; }
+                if (data.error) {
+                    addMsg(`❌ Error: ${data.error.message}`, 'ai');
+                } else {
+                    addMsg(data.candidates[0].content.parts[0].text, 'ai');
+                }
+            } catch (e) { 
+                loading.remove();
+                addMsg("❌ Connection failed. Check your internet or API key.", 'ai');
+            }
         }
 
         function startVoice() {
@@ -276,7 +271,7 @@
             recognition.onresult = (event) => {
                 chatInput.value = event.results[0][0].transcript;
                 sendMessage();
-                chatInput.placeholder = "Message...";
+                chatInput.placeholder = "Type a message...";
             };
         }
 
@@ -293,4 +288,3 @@
     </script>
 </body>
 </html>
-
