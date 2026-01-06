@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Solutions | Websites • Apps • AI Agents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .ai-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px);
+            border-color: #6366f1;
+            box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.2);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+
+        /* Swiper Styling */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 320px;
+            height: 450px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header / Nav -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                        <i class="fa-solid fa-robot text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">AGENTIC</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center text-sm font-semibold">
+                    <a href="#services" class="text-slate-600 hover:text-indigo-600 transition">Services</a>
+                    <a href="#process" class="text-slate-600 hover:text-indigo-600 transition">Process</a>
+                    <a href="#showcase" class="text-slate-600 hover:text-indigo-600 transition">Showcase</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all active:scale-95">Connect Now</a>
+                </div>
+                <button class="md:hidden text-slate-600 p-2"><i class="fa-solid fa-bars-staggered text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-44 pb-24 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 px-4 py-2 rounded-full mb-8 floating">
+                <span class="text-xs font-bold text-indigo-700 uppercase tracking-widest">Innovation Powered by AI</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1]">
+                We Build Websites, Apps <br>& <span class="ai-gradient">AI Agents</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-500 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Elevating small businesses through custom digital solutions. Whether it's a stunning website, a scalable app, or an autonomous AI workforce, we build it.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
+                <a href="#contact" class="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-black transition-all shadow-xl hover:-translate-y-1">
+                    Start Your Project
+                </a>
+                <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group">
+                    <div class="w-12 h-12 bg-white rounded-full border border-slate-200 flex items-center justify-center shadow-sm group-hover:border-indigo-400 transition">
+                        <i class="fa-brands fa-linkedin-in text-indigo-600 text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-slate-400 font-bold uppercase">Connect with Founder</p>
+                        <p class="font-bold text-slate-700 group-hover:text-indigo-600 transition">Jake Magarrette</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Core Expertise</h2>
+                <div class="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Web -->
+                <div class="glass-card p-10 rounded-3xl bg-slate-50/50">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Website Building</h3>
+                    <p class="text-slate-600 leading-relaxed">Stunning, fast, and secure websites tailored to convert visitors. From simple landing pages to complex e-commerce platforms.</p>
+                </div>
+
+                <!-- AI -->
+                <div class="glass-card p-10 rounded-3xl bg-white border-2 border-indigo-100 shadow-2xl shadow-indigo-100">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-robot text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Business Agents</h3>
+                    <p class="text-slate-600 leading-relaxed">Automate your workforce. We build autonomous agents for customer support, lead generation, and workflow optimization.</p>
+                </div>
+
+                <!-- App -->
+                <div class="glass-card p-10 rounded-3xl bg-slate-50/50">
+                    <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">App Development</h3>
+                    <p class="text-slate-600 leading-relaxed">Custom mobile and web applications built to scale. We turn your unique app ideas into reality on iOS and Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase -->
+    <section id="showcase" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 mb-12 text-center text-white">
+            <h2 class="text-4xl font-bold mb-4 italic">The Showcase</h2>
+            <p class="text-slate-400">Sneak peak at the tech and design we deploy for our clients.</p>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" alt="Code">
+                    <div class="slide-content">
+                        <h4 class="font-bold text-xl">High Performance Web</h4>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800" alt="Robotics">
+                    <div class="slide-content">
+                        <h4 class="font-bold text-xl">Autonomous Logic</h4>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" alt="Mobile">
+                    <div class="slide-content">
+                        <h4 class="font-bold text-xl">Mobile Innovation</h4>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI">
+                    <div class="slide-content">
+                        <h4 class="font-bold text-xl">Neural Business Agents</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold mb-4">How We Launch</h2>
+                <p class="text-slate-500">A clear roadmap from inquiry to deployment.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+                <div class="text-center">
+                    <div class="w-16 h-16 step-number text-white rounded-3xl flex items-center justify-center mx-auto mb-8 text-2xl font-bold shadow-xl">1</div>
+                    <h3 class="text-2xl font-bold mb-4">Consultation</h3>
+                    <p class="text-slate-600">We analyze your business needs and select the best technology (Web, App, or AI) to achieve your goals.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 step-number text-white rounded-3xl flex items-center justify-center mx-auto mb-8 text-2xl font-bold shadow-xl">2</div>
+                    <h3 class="text-2xl font-bold mb-4">Development</h3>
+                    <p class="text-slate-600">Our developers and AI engineers build your solution with weekly updates and progress check-ins.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 step-number text-white rounded-3xl flex items-center justify-center mx-auto mb-8 text-2xl font-bold shadow-xl">3</div>
+                    <h3 class="text-2xl font-bold mb-4">Live Deployment</h3>
+                    <p class="text-slate-600">Full launch of your project with complete handover, training, and 24/7 technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-extrabold mb-8 italic">Let's Connect</h2>
+                <p class="text-slate-400 text-xl mb-12">Whether you're looking for a new website or the latest in AI automation, we're ready to help.</p>
+                
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-14 h-14 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center border border-indigo-600/30">
+                            <i class="fa-solid fa-envelope text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-500 uppercase">Direct Email</p>
+                            <a href="mailto:nexadigipg@gmail.com" class="text-2xl font-semibold hover:text-indigo-400 transition">nexadigipg@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="w-14 h-14 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center border border-blue-600/30">
+                            <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-500 uppercase">LinkedIn Profile</p>
+                            <a href="https://www.linkedin.com/in/magarrette-jake-5b2b593a3" target="_blank" rel="noopener noreferrer" class="text-2xl font-semibold hover:text-blue-400 transition">Jake Magarrette</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formspree Integrated Form -->
+            <div class="bg-white rounded-[3rem] p-10 md:p-14 shadow-2xl text-slate-900">
+                <form action="https://formspree.io/f/nexadigipg@gmail.com" method="POST" id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-500 px-1">Full Name</label>
+                            <input type="text" name="name" placeholder="Your name" class="w-full bg-slate-100 p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-500 px-1">Email Address</label>
+                            <input type="email" name="email" placeholder="example@mail.com" class="w-full bg-slate-100 p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-500 px-1">Service Required</label>
+                        <select name="service" class="w-full bg-slate-100 p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer" required>
+                            <option value="">Choose a service...</option>
+                            <option>Website Building</option>
+                            <option>AI Agent Implementation</option>
+                            <option>Mobile/Web App Build</option>
+                            <option>Strategy Consultation</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-500 px-1">Message</label>
+                        <textarea name="message" rows="4" placeholder="Briefly describe your project..." class="w-full bg-slate-100 p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+                    </div>
+                    <!-- Anti-spam hidden input -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="w-full py-5 bg-indigo-600 text-white font-bold rounded-2xl shadow-xl shadow-indigo-100 hover:bg-indigo-700 transition active:scale-95">
+                        Submit Inquiry
+                    </button>
+                </form>
+                <div id="successPanel" class="hidden text-center py-10">
+                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-check text-4xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-2">Message Sent</h3>
+                    <p class="text-slate-500">Jake will get back to you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-955 text-center text-slate-600 border-t border-slate-900">
+        <div class="flex justify-center items-center space-x-2 mb-4">
+            <div class="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center">
+                <i class="fa-solid fa-robot text-white text-xs"></i>
+            </div>
+            <span class="text-white font-bold tracking-tight">AGENTIC</span>
+        </div>
+        <p class="text-xs">&copy; 2024 AGENTIC Studio by Jake Magarrette. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 100,
+                modifier: 1.5,
+                slideShadows: true,
+            },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            autoplay: { delay: 4000 },
+        });
+
+        // AJAX Submission to keep user on page
+        const form = document.getElementById('contactForm');
+        const successPanel = document.getElementById('successPanel');
+        
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successPanel.classList.remove('hidden');
+                    form.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                }
+            }).catch(error => {
+                alert("Oops! There was a problem submitting your form.");
+            });
+        });
+    </script>
+</body>
+</html>
+
